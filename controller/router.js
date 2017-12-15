@@ -4,11 +4,12 @@
 const db = require('../module/db.js');
 
 
-function login(req,res,next) {
+function findData(req,res,next) {
 
-    var queryJson = req.body;     //接收接送格式的请求数据
+    let queryDatabase = req.body.database.trim();       //要查询的数据库
+    let queryJson = req.body.queryJson;     //接收接送格式的请求数据
     console.log(queryJson);
-    db.findDocument('Q&A','logInfo',queryJson,{page:0,size:0},(err,data) => {
+    db.findDocument('Q&A',queryDatabase,queryJson,{page:0,size:0},(err,data) => {
         if(err){
             res.send(err);
             console.log(err);
@@ -20,4 +21,4 @@ function login(req,res,next) {
 
 }
 
-module.exports = {login};
+module.exports = {findData};

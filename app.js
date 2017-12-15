@@ -34,6 +34,6 @@ app.get('/',(req,res) => {
     res.send("欢迎访问");
 });
 
-app.post('/login',router.login);
+app.post('/find',router.findData);    //查找接口
 
 app.listen(3000);
