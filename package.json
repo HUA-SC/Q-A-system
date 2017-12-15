@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/HUA-SC/Q-A-system#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongodb": "^2.2.33"
   }
 }
