@@ -33,6 +33,9 @@ app.all('*', function(req, res, next) {
 //处理注册信息的接口
 app.post('/register',router.register);
 
+//处理登录信息的接口
+app.post('/logIn',router.signIn);
+
 //用于查找的接口
 app.post('/find',router.findData);
 

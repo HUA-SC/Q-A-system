@@ -24,6 +24,22 @@ function register(req,res,next) {
     })
 }
 
+//登录信息处理
+function signIn(req,res,next) {
+    let queryDatabase = req.body.database.trim();       //要查询的数据库
+    let queryJson = req.body.queryJson;     //接收接送格式的请求数据
+    queryJson.password = encrypt.encryption(queryJson.password.toString());   //密码用MD5加密
+    db.findDocument('Q&A',queryDatabase,queryJson,{page:0,size:0},(err,data) => {
+        if(err){
+            res.send(err);
+            console.log(err);
+        }else{
+            res.send(data);        //将查找数据以json格式返回
+
+        }
+    })
+
+}
 
 //查找数据
 function findData(req,res) {
@@ -49,4 +65,4 @@ function errorHandler(err, req, res, next) {
     res.render('error', { error: err });
 }
 
-module.exports = {register,findData,errorHandler};
+module.exports = {register,signIn,findData,errorHandler};
