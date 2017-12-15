@@ -10,30 +10,34 @@ const bodyParser = require('body-parser');   //该中间件用于post请求的�
 const router = require('./controller/router.js');//导入路由模块
 
 /*中间件的使用-start*/
+//设置express的session
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }
 }));
-app.use(bodyParser.json()); // for parsing application/json
-//app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-// app.use(multer()); // for parsing multipart/form-data
 
+// for parsing application/json
+app.use(bodyParser.json());
 
+//跨域请求配置
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");//允许的域，设置为任意
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With"); //设置允许的header类型
-    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By",' 3.2.1')
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");  //设置允许跨域的方法
+    res.header("X-Powered-By",' 3.2.1');
     next();
 });
-/**/
 
-app.get('/',(req,res) => {
-    res.send("欢迎访问");
-});
+//处理注册信息的接口
+app.post('/register',router.register);
 
-app.post('/find',router.findData);    //查找接口
+//用于查找的接口
+app.post('/find',router.findData);
 
+//接下不满足上述所有接口的请求，并返回错误提示
+app.use(router.errorHandler);
+
+/*中间件的使用-end*/
 app.listen(3000);
