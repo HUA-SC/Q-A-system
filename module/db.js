@@ -48,6 +48,7 @@ function insertDocument (coll,document,jsonArr,callback) {
             }
             console.log(`Inserted ${result.ops.length} documents into the document collection`);
             callback(null,result);
+            console.log(result);
             db.close();
             return;
         });

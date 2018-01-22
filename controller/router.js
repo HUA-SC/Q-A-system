@@ -13,15 +13,28 @@ function register(req,res,next) {
     let queryJson = req.body.queryJson;     //接收接送格式的请求数据
     queryJson[0].password = encrypt.encryption(queryJson[0].password.toString());   //密码用MD5加密
 
-    db.insertDocument('Q&A',queryDatabase,queryJson,(err,data) => {
+    let findUser = {"user":queryJson[0].user};
+    //注册先查找是否存在当前用户名是否已存在
+    db.findDocument('Q&A',queryDatabase,findUser,{page:0,size:0},(err,data) => {
+
         if(err){
             res.send(err);
-            console.log(err);
-        }else{
-            res.send(data);        //将查找数据以json格式返回
+        }else if(data.length !== 0){   //有数据证明用户名存在，不予注册
+            console.log(data);
+            res.send(false);
+        }else{              //注册
+            db.insertDocument('Q&A',queryDatabase,queryJson,(err,data) => {
+                if(err){
+                    res.send(err);
+                    console.log(err);
+                }else{
+                    res.send(data);        //将查找数据以json格式返回
 
+                }
+            })
         }
     })
+
 }
 
 //登录信息处理
@@ -35,7 +48,9 @@ function signIn(req,res,next) {
             console.log(err);
         }else{
             res.send(data);        //将查找数据以json格式返回
-
+            if(data.user === queryJson.user){
+                req.session
+            }
         }
     })
 
