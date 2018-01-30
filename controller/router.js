@@ -6,6 +6,10 @@ const db = require('../module/db.js');
 const encrypt = require('../module/md5.js');
 
 
+//系统运行测试
+function ping(req,res,next) {
+    return res.send("pang");
+}
 
 //注册信息处理
 function register(req,res,next) {
@@ -47,16 +51,21 @@ function signIn(req,res,next) {
             res.send(err);
             console.log(err);
         }else{
+            // req.session.user = queryJson.user;
+            // console.log(req.session.user);
+            // res.locals.session=req.session;
             res.send(data);        //将查找数据以json格式返回
-            if(data.user === queryJson.user){
-                req.session
-            }
         }
     })
 
 }
 
-//查找数据
+//登出信息处理
+// function logOut(req,res,next) {
+//     req.session.destroy();    // session置空
+// }
+
+//查找数据  //作用待定！！！！！
 function findData(req,res) {
 
     let queryDatabase = req.body.database.trim();       //要查询的数据库
@@ -74,10 +83,10 @@ function findData(req,res) {
 
 }
 
-//返回请求错误信息
+//返回请求错误信息  //不得行啊！！！
 function errorHandler(err, req, res, next) {
-    res.status(500);
-    res.render('error', { error: err });
+    // res.status(500);
+   return res.render('error', { error: err });
 }
 
-module.exports = {register,signIn,findData,errorHandler};
+module.exports = {ping,register,signIn,findData,errorHandler,logOut};
