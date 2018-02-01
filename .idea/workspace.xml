@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/router.js" afterPath="$PROJECT_DIR$/controller/router.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -344,7 +343,7 @@
       <workItem from="1513220589345" duration="18315000" />
       <workItem from="1516626341035" duration="6680000" />
       <workItem from="1517121880364" duration="4596000" />
-      <workItem from="1517315928435" duration="9220000" />
+      <workItem from="1517315928435" duration="9388000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -395,11 +394,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517319188708</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="登录注册数据库添加字段“rank”;&#10;增加传入json键名是否正确判断;&#10;增加传入json键值是否为空判断;">
+      <created>1517495474409</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1517495474409</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71838000" />
+    <option name="totallyTimeSpent" value="72006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,7 +443,8 @@
     <MESSAGE value="完善登录注册功能" />
     <MESSAGE value="添加注册重名认证" />
     <MESSAGE value="排错" />
-    <option name="LAST_COMMIT_MESSAGE" value="排错" />
+    <MESSAGE value="登录注册数据库添加字段“rank”;&#10;增加传入json键名是否正确判断;&#10;增加传入json键值是否为空判断;" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录注册数据库添加字段“rank”;&#10;增加传入json键名是否正确判断;&#10;增加传入json键值是否为空判断;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
