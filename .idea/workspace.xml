@@ -343,7 +343,7 @@
       <workItem from="1513220589345" duration="18315000" />
       <workItem from="1516626341035" duration="6680000" />
       <workItem from="1517121880364" duration="4596000" />
-      <workItem from="1517315928435" duration="9388000" />
+      <workItem from="1517315928435" duration="9413000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -401,11 +401,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517495474409</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="登录注册数据库添加字段“rank”;&#10;增加传入json键名是否正确判断;&#10;增加传入json键值是否为空判断;">
+      <created>1517495540226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1517495540226</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72006000" />
+    <option name="totallyTimeSpent" value="72031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
