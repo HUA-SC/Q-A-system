@@ -15,8 +15,8 @@ function ping(req,res,next) {
 
 //注册信息处理
 function register(req,res,next) {
-    let paramCorret = paramCheck.logParam(req.body);   // 键是否正确判断
-    if(! paramCorret){
+    let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
+    if(! paramCorrect){
         res.send("wrong json key! 检查json");
         return ;
     }
@@ -61,8 +61,8 @@ function signIn(req,res,next) {
 
 
 
-    let paramCorret = paramCheck.logParam(req.body);   // 键是否正确判断
-    if(! paramCorret){
+    let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
+    if(! paramCorrect){
         res.send("wrong json key! 检查json");
         return ;
     }
