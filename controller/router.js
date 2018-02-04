@@ -120,9 +120,13 @@ function findData(req,res) {
 
 //问题发布
 function addQuestion(req,res) {
-    dirChange.formHandle(req,res,() => {
-
-            res.send("ook");
+    dirChange.formHandle(req,res,(err) => {
+        if(err){
+            res.send(err.toString());
+            return;
+        }
+        res.send("提问成功!");
+        return;
 
     });
 }
