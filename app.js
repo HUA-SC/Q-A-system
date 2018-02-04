@@ -6,9 +6,10 @@
 const express = require("express");  //使用express框架
 const app = express();          //创建express入口函数
 const session = require('express-session');  //导入session
+
+
 const bodyParser = require('body-parser');   //该中间件用于post请求的接收
 const router = require('./controller/router.js');//导入路由模块
-
 /*中间件的使用-start*/
 // 设置express的session
 
@@ -19,9 +20,10 @@ const router = require('./controller/router.js');//导入路由模块
 //     saveUninitialized: true,
 //     cookie: { secure: true }
 // }));
-
 // for parsing application/json
 app.use(bodyParser.json());
+
+/* 中间件的使用-end */
 
 //跨域请求配置
 app.all('*', function(req, res, next) {
@@ -43,6 +45,9 @@ app.post('/logIn',router.signIn);
 
 //处理登出信息的接口
 // app.get('/logout',router.logOut);
+
+//
+app.post('/addquestion',router.addQuestion);
 
 //用于查找的接口
 app.post('/find',router.findData);

@@ -2,9 +2,13 @@
  * Created by sc on 2017/12/11.
  * 该文件用于路由
  */
+const formidable= require('formidable');  //导入表单处理插件formidable
+util = require('util');
+
 const db = require('../module/db.js');
 const encrypt = require('../module/md5.js');
 const paramCheck = require('../module/paramCheck.js');
+const dirChange = require('../module/dirChange.js');
 
 const logDatabase = "logInfo";          //登陆注册数据库名
 
@@ -114,10 +118,20 @@ function findData(req,res) {
 
 }
 
+//问题发布
+function addQuestion(req,res) {
+    dirChange.formHandle(req,res,() => {
+
+            res.send("ook");
+
+    });
+}
+
+
 //返回请求错误信息  //不得行啊！！！
 function errorHandler(err, req, res, next) {
     // res.status(500);
    return res.render('error', { error: err });
 }
 
-module.exports = {ping,register,signIn,findData,errorHandler};
+module.exports = {ping,register,signIn,findData,errorHandler,addQuestion};
