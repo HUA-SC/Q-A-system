@@ -11,4 +11,12 @@ function logParam(obj){
     return true;
 }
 
-module.exports = {logParam};
+function questionParam(obj){
+    if(obj.hasOwnProperty("content") && obj.hasOwnProperty("user_id")){
+        // do nothing
+    }else{
+        return false;
+    }
+    return true;
+}
+module.exports = {logParam,questionParam};
