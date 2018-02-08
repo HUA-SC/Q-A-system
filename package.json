@@ -21,6 +21,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "formidable": "^1.1.1",
+    "jquery": "^3.3.1",
     "mongodb": "^2.2.33",
     "swaggerize-ui": "^1.0.1",
     "time-stamp": "^2.0.0"

@@ -4,7 +4,8 @@
 
 const fs = require('fs');
 const path = require('path');
-var ObjectId = require('mongodb').ObjectId;
+const ObjectId = require('mongodb').ObjectId;
+
 
 const formidable = require('formidable');
 const  util = require('util');
@@ -43,13 +44,9 @@ function formHandle(req,res,callback) {
         let userId = fields.user_id.toString().trim();
         let content = fields.content.toString().trim();      //应由前端来做判断
 
-        if(files.hasOwnProperty("img")){   //若存在字段名为“img”,则表示有图片被上传
+
+        if(files.hasOwnProperty("img") && files.hasOwnProperty("File") ){   //若存在字段名为“img”,则表示有图片被上传
             reNameImage(files,upPath);
-
-        }else if(files){               //有内容但却没有img属性,则说明img键值错误
-            callback(new Error("提问表单参数错误!"));
-            return;
-
         }else{                      //没有图片没上传
 
         }
