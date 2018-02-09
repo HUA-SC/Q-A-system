@@ -30,5 +30,18 @@ function questionParam(obj){
     return true;
 }
 
+/**
+ * 判断回答json数据中是否存在必要属性
+ * @param obj
+ * @returns {boolean}
+ */
+function answerParam(obj) {
+    if(obj.hasOwnProperty("user_id") && obj.hasOwnProperty("content") && obj.hasOwnProperty("question_id"))   {
+        // do nothing
+    } else{
+        return false;
+    }
+    return true;
+}
 
-module.exports = {logParam,questionParam};
+module.exports = {logParam,questionParam,answerParam};

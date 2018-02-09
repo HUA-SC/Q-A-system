@@ -12,12 +12,22 @@ const dirChange = require('../module/dirChange.js');
 
 const logDatabase = "logInfo";          //登陆注册数据库名
 
-//系统运行测试
+/**
+ * 系统连通性测试
+ * @param req
+ * @param res
+ * @param next
+ */
 function ping(req,res,next) {
     return res.send("pang");
 }
 
-//注册信息处理
+/**
+ * 注册信息处理
+ * @param req
+ * @param res
+ * @param next
+ */
 function register(req,res,next) {
     let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
     if(! paramCorrect){
@@ -58,7 +68,12 @@ function register(req,res,next) {
 
 }
 
-//登录信息处理
+/**
+ * 登录信息处理
+ * @param req
+ * @param res
+ * @param next
+ */
 function signIn(req,res,next) {
     // let queryDatabase = req.body.database.trim();       //要查询的数据库
     // let queryJson = req.body.queryJson;     //接收接送格式的请求数据
@@ -118,9 +133,13 @@ function findData(req,res) {
 
 }
 
-//问题发布
+/**
+ * 发布问题
+ * @param req
+ * @param res
+ */
 function addQuestion(req,res) {
-    dirChange.formHandle(req,res,(err) => {
+    dirChange.questionFormHandle(req,res,(err) => {
         if(err){
             res.send(err.toString());
             return;
@@ -131,6 +150,22 @@ function addQuestion(req,res) {
     });
 }
 
+/**
+ * 发布回答
+ * @param req
+ * @param res
+ */
+function addAnswer(req,res) {
+
+    dirChange.answerFrmHandle(req,res,(err) => {
+        if(err){
+            res.send(err.toString());
+            return;
+        }
+        res.send("提问成功!");
+        return;
+    })
+}
 
 //返回请求错误信息  //不得行啊！！！
 function errorHandler(err, req, res, next) {
@@ -138,4 +173,4 @@ function errorHandler(err, req, res, next) {
    return res.render('error', { error: err });
 }
 
-module.exports = {ping,register,signIn,findData,errorHandler,addQuestion};
+module.exports = {ping,register,signIn,findData,errorHandler,addQuestion,addAnswer};

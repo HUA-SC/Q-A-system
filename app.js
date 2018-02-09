@@ -46,8 +46,14 @@ app.post('/logIn',router.signIn);
 //处理登出信息的接口
 // app.get('/logout',router.logOut);
 
-//
-app.post('/addquestion',router.addQuestion);
+//添加提问信息的接口
+app.post('/add/question',router.addQuestion);
+
+//修改提问
+// app.post('/update/question',router.updateQuestion);
+//删除提问
+
+app.post('/add/answer',router.addAnswer);
 
 //用于查找的接口
 app.post('/find',router.findData);
