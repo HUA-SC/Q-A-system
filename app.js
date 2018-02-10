@@ -49,11 +49,14 @@ app.post('/logIn',router.signIn);
 //添加提问信息的接口
 app.post('/add/question',router.addQuestion);
 
-//修改提问
-// app.post('/update/question',router.updateQuestion);
 //删除提问
+app.post('/delete/question',router.deleteQuestion);
 
+//回答接口
 app.post('/add/answer',router.addAnswer);
+
+//删除回答
+app.post('/delete/answer',router.deleteAnswer);
 
 //用于查找的接口
 app.post('/find',router.findData);

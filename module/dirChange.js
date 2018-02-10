@@ -196,4 +196,5 @@ function reNameImage(files,upPath) {
     }
 
 }
+
 module.exports = {questionFormHandle,answerFrmHandle};

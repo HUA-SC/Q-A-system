@@ -2,15 +2,18 @@
  * Created by sc on 2017/12/11.
  * 该文件用于路由
  */
-const formidable= require('formidable');  //导入表单处理插件formidable
-util = require('util');
+
+const ObjectId = require('mongodb').ObjectId;
 
 const db = require('../module/db.js');
 const encrypt = require('../module/md5.js');
 const paramCheck = require('../module/paramCheck.js');
 const dirChange = require('../module/dirChange.js');
 
-const logDatabase = "logInfo";          //登陆注册数据库名
+const database = 'Q&A';                 //数据库名
+const logDatabase = "logInfo";          //登陆注册集合名
+const questionDatabase = 'questions';   //提问集合名
+const answerDatabase = 'answers';       //回答集合名
 
 /**
  * 系统连通性测试
@@ -45,7 +48,7 @@ function register(req,res,next) {
 
     let findUser = {"user":queryUser};
     //注册先查找是否存在当前用户名是否已存在
-    db.findDocument('Q&A',logDatabase,findUser,{page:0,size:0},(err,data) => {
+    db.findDocument(database,logDatabase,findUser,{page:0,size:0},(err,data) => {
 
         if(err){
             res.send(err);
@@ -53,7 +56,7 @@ function register(req,res,next) {
             res.send("user exist");
             return;
         }else{              //注册
-            db.insertDocument('Q&A',logDatabase,[{"user":queryUser,"password":queryPwd,"rank":"0"}],(err,data) => {
+            db.insertDocument(database,logDatabase,[{"user":queryUser,"password":queryPwd,"rank":"0"}],(err,data) => {
                 if(err){
                     res.send(err);
                     return;
@@ -96,7 +99,7 @@ function signIn(req,res,next) {
     queryPwd = encrypt.encryption(queryPwd);   //密码用MD5加密
 
 
-    db.findDocument('Q&A',logDatabase,{"user":queryUser,"password":queryPwd,"rank":"0"},{page:0,size:0},(err,data) => {
+    db.findDocument(database,logDatabase,{"user":queryUser,"password":queryPwd,"rank":"0"},{page:0,size:0},(err,data) => {
         if(err){
             res.send(err);
             console.log(err);
@@ -121,7 +124,7 @@ function findData(req,res) {
     let queryDatabase = req.body.database.trim();       //要查询的数据库
     let queryJson = req.body.queryJson;     //接收接送格式的请求数据
     console.log(queryJson);
-    db.findDocument('Q&A',queryDatabase,queryJson,{page:0,size:0},(err,data) => {
+    db.findDocument(database,queryDatabase,queryJson,{page:0,size:0},(err,data) => {
         if(err){
             res.send(err);
             console.log(err);
@@ -151,6 +154,30 @@ function addQuestion(req,res) {
 }
 
 /**
+ * 删除提问
+ * @param req
+ * @param res
+ */
+function deleteQuestion(req,res) {
+
+    let paramCorrect = paramCheck.checkParam('question_id',req.body);
+    if(!paramCorrect){
+        res.send("参数错误！");
+        return ;
+    }
+    let questionId = req.body.question_id;  //待删除问题_id
+    db.deleteDocument(database,questionDatabase,{"_id":ObjectId(questionId)},(err,data) => {
+        if(err){
+            res.send("连接数据库失败！");
+            return;
+        }
+        res.send("删除成功！");
+        return ;
+    })
+
+}
+
+/**
  * 发布回答
  * @param req
  * @param res
@@ -167,10 +194,36 @@ function addAnswer(req,res) {
     })
 }
 
+/**
+ * 删除回答
+ * @param req
+ * @param res
+ */
+function deleteAnswer(req,res) {
+    let paramCorrect = paramCheck.checkParam('answer_id',req.body);
+    if(!paramCorrect){
+        res.send("参数错误！");
+        return ;
+    }
+    let answerId = req.body.answer_id;  //待删除问题_id
+    db.deleteDocument(database,answerDatabase,{"_id":ObjectId(answerId)},(err,data) => {
+        if (err) {
+            res.send("连接数据库失败！");
+            return;
+        }
+        res.send("删除成功！");
+        return
+    });
+}
+
 //返回请求错误信息  //不得行啊！！！
 function errorHandler(err, req, res, next) {
     // res.status(500);
    return res.render('error', { error: err });
 }
 
-module.exports = {ping,register,signIn,findData,errorHandler,addQuestion,addAnswer};
+module.exports = {
+                    ping,register,signIn,findData,
+                    errorHandler,addQuestion,addAnswer,
+                    deleteQuestion,deleteAnswer
+                  };

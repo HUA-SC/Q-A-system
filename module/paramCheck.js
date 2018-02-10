@@ -44,4 +44,19 @@ function answerParam(obj) {
     return true;
 }
 
-module.exports = {logParam,questionParam,answerParam};
+/**
+ * 单参数-传参正确性判断
+ * @param str
+ * @param obj
+ * @returns {boolean}
+ */
+function checkParam(str,obj) {
+    if(obj.hasOwnProperty(str)){
+        // do nothing
+    }else{
+        return false;
+    }
+    return true;
+}
+
+module.exports = {logParam,questionParam,answerParam,checkParam};
