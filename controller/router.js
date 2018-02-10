@@ -118,23 +118,7 @@ function signIn(req,res,next) {
 //     req.session.destroy();    // session置空
 // }
 
-//查找数据  //作用待定！！！！！
-function findData(req,res) {
 
-    let queryDatabase = req.body.database.trim();       //要查询的数据库
-    let queryJson = req.body.queryJson;     //接收接送格式的请求数据
-    console.log(queryJson);
-    db.findDocument(database,queryDatabase,queryJson,{page:0,size:0},(err,data) => {
-        if(err){
-            res.send(err);
-            console.log(err);
-        }else{
-            res.send(data);        //将查找数据以json格式返回
-
-        }
-    })
-
-}
 
 /**
  * 发布问题
@@ -214,6 +198,34 @@ function deleteAnswer(req,res) {
         res.send("删除成功！");
         return
     });
+}
+
+/**
+ * 通用数据查询接口
+ * 传入参数应包括查询集合名称
+ * @param req
+ * @param res
+ */
+function findData(req,res) {
+
+    if(!paramCheck.checkParam('collection',req.body) && !paramCheck('queryJson',req.body)){
+        res.send("查找的参数错误！");
+        return;
+    }
+
+    let queryDatabase = req.body.collection.trim();       //要查询的数据库
+    let queryJson = req.body.queryJson;     //接收接送格式的请求数据
+    console.log(queryJson);
+    db.findDocument(database,queryDatabase,queryJson,{page:0,size:0},(err,data) => {
+        if(err){
+            res.send(err);
+            console.log(err);
+        }else{
+            res.send(data);        //将查找数据以json格式返回
+
+        }
+    })
+
 }
 
 //返回请求错误信息  //不得行啊！！！
