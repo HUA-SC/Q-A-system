@@ -24,6 +24,8 @@
     "jquery": "^3.3.1",
     "mongodb": "^2.2.33",
     "swaggerize-ui": "^1.0.1",
-    "time-stamp": "^2.0.0"
+    "text-censor": "^1.0.2",
+    "time-stamp": "^2.0.0",
+    "word-sensitive": "0.0.1"
   }
 }

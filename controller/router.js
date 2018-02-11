@@ -4,6 +4,8 @@
  */
 
 const ObjectId = require('mongodb').ObjectId;
+const censor = require('word-sensitive');   //关键字过滤
+
 
 const db = require('../module/db.js');
 const encrypt = require('../module/md5.js');
@@ -44,8 +46,16 @@ function register(req,res,next) {
         res.send("用户名或密码为空！");
         return;
     }
-    queryPwd = encrypt.encryption(queryPwd);   //密码用MD5加密
 
+    censord = censor.filter(queryUser);
+    if( queryUser !== censord ){
+        //注册用户名包含敏感信息
+       res.send("警告，注册用户名包含敏感信息！");
+       return;
+      }
+
+
+    queryPwd = encrypt.encryption(queryPwd);   //密码用MD5加密
     let findUser = {"user":queryUser};
     //注册先查找是否存在当前用户名是否已存在
     db.findDocument(database,logDatabase,findUser,{page:0,size:0},(err,data) => {
