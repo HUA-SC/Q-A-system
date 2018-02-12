@@ -11,6 +11,9 @@ const db = require('../module/db.js');
 const encrypt = require('../module/md5.js');
 const paramCheck = require('../module/paramCheck.js');
 const dirChange = require('../module/dirChange.js');
+const backMessage = require('../module/backMessage.js');
+const myError = require('../module/MyErrorCode.js');
+
 
 const database = 'Q&A';                 //数据库名
 const logDatabase = "logInfo";          //登陆注册集合名
@@ -36,22 +39,22 @@ function ping(req,res,next) {
 function register(req,res,next) {
     let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
     if(! paramCorrect){
-        res.send("wrong json key! 检查json");
+        res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
         return ;
     }
 
     let queryUser = req.body.user.trim().toString();
     let queryPwd = req.body.password.trim().toString();
     if(!queryUser || ! queryPwd){
-        res.send("用户名或密码为空！");
+        res.json(backMessage.back(myError.signError.code,myError.signError.msg));
         return;
     }
 
     censord = censor.filter(queryUser);
     if( queryUser !== censord ){
         //注册用户名包含敏感信息
-       res.send("警告，注册用户名包含敏感信息！");
-       return;
+        res.json(backMessage.back(myError.signCensorError.code,myError.signCensorError.msg));
+        return;
       }
 
 
@@ -61,17 +64,18 @@ function register(req,res,next) {
     db.findDocument(database,logDatabase,findUser,{page:0,size:0},(err,data) => {
 
         if(err){
-            res.send(err);
+            res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
+            return;
         }else if(data.length !== 0){   //有数据证明用户名存在，不予注册
-            res.send("user exist");
+            res.json(backMessage.back(myError.signExistError.code,myError.signExistError.msg));
             return;
         }else{              //注册
             db.insertDocument(database,logDatabase,[{"user":queryUser,"password":queryPwd,"rank":"0"}],(err,data) => {
                 if(err){
-                    res.send(err);
+                    res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
                     return;
                 }else{
-                    res.send(data);        //将查找数据以json格式返回
+                    res.json(backMessage.back());
                     return;
                 }
             })
@@ -88,14 +92,10 @@ function register(req,res,next) {
  * @param next
  */
 function signIn(req,res,next) {
-    // let queryDatabase = req.body.database.trim();       //要查询的数据库
-    // let queryJson = req.body.queryJson;     //接收接送格式的请求数据
-
-
 
     let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
     if(! paramCorrect){
-        res.send("wrong json key! 检查json");
+        res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
         return ;
     }
 
@@ -103,7 +103,8 @@ function signIn(req,res,next) {
     let queryUser = req.body.user.trim().toString();
     let queryPwd = req.body.password.trim().toString();
     if(!queryUser || ! queryPwd){
-        res.send("用户名或密码为空！");
+        console.log(backMessage.message.result);
+        res.json(backMessage.back(myError.signError.code,myError.signError.msg));
         return;
     }
     queryPwd = encrypt.encryption(queryPwd);   //密码用MD5加密
@@ -111,15 +112,14 @@ function signIn(req,res,next) {
 
     db.findDocument(database,logDatabase,{"user":queryUser,"password":queryPwd,"rank":"0"},{page:0,size:0},(err,data) => {
         if(err){
-            res.send(err);
-            console.log(err);
+            res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
+            return;
         }else{
-            // req.session.user = queryJson.user;
-            // console.log(req.session.user);
-            // res.locals.session=req.session;
-            res.send(data);        //将查找数据以json格式返回
-        }
-    })
+            console.log(data[0]);
+                res.json(backMessage.back(backMessage.message.code,backMessage.message.msg,data[0]));
+                return;
+            }
+        })
 
 }
 
@@ -135,13 +135,13 @@ function signIn(req,res,next) {
  * @param req
  * @param res
  */
-function addQuestion(req,res) {
+function addQuestion(req,res,next) {
     dirChange.questionFormHandle(req,res,(err) => {
         if(err){
-            res.send(err.toString());
+            res.json(backMessage.back(err.code,err.msg));
             return;
         }
-        res.send("提问成功!");
+        res.json(backMessage.back());
         return;
 
     });
@@ -156,18 +156,30 @@ function deleteQuestion(req,res) {
 
     let paramCorrect = paramCheck.checkParam('question_id',req.body);
     if(!paramCorrect){
-        res.send("参数错误！");
+        res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
         return ;
     }
     let questionId = req.body.question_id;  //待删除问题_id
-    db.deleteDocument(database,questionDatabase,{"_id":ObjectId(questionId)},(err,data) => {
+
+
+    db.findDocument(database,questionDatabase,{"_id":ObjectId(questionId)},{page:0,size:0},(err,data) => {
         if(err){
-            res.send("连接数据库失败！");
+            res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
             return;
+        }else if(data.length == 0){ //问题id不存在
+            return res.json(backMessage.back(myError.questionIdExistError.code,myError.questionIdExistError.msg));
+        }else{
+            db.deleteDocument(database,questionDatabase,{"_id":ObjectId(questionId)},(err,data) => {
+                if(err){
+                    res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
+                    return;
+                }
+                res.json(backMessage.back());  //提问删除成功
+                return ;
+            })
         }
-        res.send("删除成功！");
-        return ;
-    })
+    });
+
 
 }
 
@@ -178,12 +190,12 @@ function deleteQuestion(req,res) {
  */
 function addAnswer(req,res) {
 
-    dirChange.answerFrmHandle(req,res,(err) => {
+    dirChange.answerFormHandle(req,res,(err) => {
         if(err){
-            res.send(err.toString());
+            res.json(backMessage.back(err.code,err.msg));
             return;
         }
-        res.send("提问成功!");
+        res.json(backMessage.back());
         return;
     })
 }
@@ -196,18 +208,28 @@ function addAnswer(req,res) {
 function deleteAnswer(req,res) {
     let paramCorrect = paramCheck.checkParam('answer_id',req.body);
     if(!paramCorrect){
-        res.send("参数错误！");
+        res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
         return ;
     }
     let answerId = req.body.answer_id;  //待删除问题_id
-    db.deleteDocument(database,answerDatabase,{"_id":ObjectId(answerId)},(err,data) => {
-        if (err) {
-            res.send("连接数据库失败！");
-            return;
+
+    db.findDocument(database,answerDatabase,{"_id":ObjectId(answerId)},{page:0,size:0},(err,data) => {
+        if(err){
+            return res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
+        }else if(data.length == 0){  //问题不存在
+            return res.json(backMessage.back(myError.answerIdExistError.code,myError.answerIdExistError.msg));
+        }else{
+            db.deleteDocument(database,answerDatabase,{"_id":ObjectId(answerId)},(err,data) => {
+                if (err) {
+                    res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
+                    return;
+                }
+                res.json(backMessage.back());   //删除成功
+                return;
+            });
         }
-        res.send("删除成功！");
-        return
     });
+
 }
 
 /**
@@ -219,20 +241,18 @@ function deleteAnswer(req,res) {
 function findData(req,res) {
 
     if(!paramCheck.checkParam('collection',req.body) && !paramCheck('queryJson',req.body)){
-        res.send("查找的参数错误！");
+        res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
         return;
     }
 
     let queryDatabase = req.body.collection.trim();       //要查询的数据库
     let queryJson = req.body.queryJson;     //接收接送格式的请求数据
-    console.log(queryJson);
+
     db.findDocument(database,queryDatabase,queryJson,{page:0,size:0},(err,data) => {
         if(err){
-            res.send(err);
-            console.log(err);
+            return res.json(backMessage.back(myError.databaseError.code,myError.databaseError.msg));
         }else{
-            res.send(data);        //将查找数据以json格式返回
-
+           return res.json(backMessage.back(backMessage.message.code,backMessage.message.msg,data));
         }
     })
 
@@ -240,8 +260,8 @@ function findData(req,res) {
 
 //返回请求错误信息  //不得行啊！！！
 function errorHandler(err, req, res, next) {
-    // res.status(500);
-   return res.render('error', { error: err });
+    console.log(err + "err");
+    return res.json({'code': '00001','msg':'系统错误','result':err.stack});
 }
 
 module.exports = {

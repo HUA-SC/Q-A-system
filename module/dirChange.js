@@ -15,6 +15,8 @@ const censor = require('word-sensitive');   //敏感词过滤，添加敏感次�
 
 const db = require('../module/db.js');
 const paramCheck = require('../module/paramCheck.js');
+const myError = require('../module/MyErrorCode.js');
+
 const logDatabase = "logInfo";          //登陆注册数据库名
 const dataBase = "Q&A";                 //数据库名
 const questionDatabase = "questions";          //提问集合名
@@ -39,14 +41,14 @@ function questionFormHandle(req,res,callback) {
 
     form.parse(req, function(err, fields, files) {
 
-        let userId = fields.user_id.toString().trim();
-        let content = fields.content.toString().trim();      //应由前端来做判断
-
         let paramCorrect = paramCheck.questionParam(fields);  //// 键是否正确判断
         if (!paramCorrect) {
-            callback(new Error("提问表单属性出错"));
+            callback(myError.paramError);
             return;
         }
+
+        let userId = fields.user_id.toString().trim();
+        let content = fields.content.toString().trim();      //应由前端来做判断
 
         censord = censor.filter(content);         //将敏感词变为**存入数据库
 
@@ -57,25 +59,21 @@ function questionFormHandle(req,res,callback) {
 
         }
 
-        // if(userId.length !== 24){
-        //     callback(new Error("user_id位数错误!"));
-        //     return;
-        // }
         db.findDocument(dataBase,logDatabase,{"_id":ObjectId(userId)},{page:0,size:0},(err,data) => {
 
             if(err){
                 images = [];   //清空
-                callback(new Error("提问环节,数据库查找失败!"));
+                callback(myError.databaseError);
                 return;
             }else if(data.length == 0){   //用户不存在，不可提问
                 images = [];   //清空
-                callback(new Error("用户不存在，不可提问"));
+                callback(myError.userNotRegisterError);
                 return;
             }else{              //注册
                 db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString()}],(err,data) => {
                     if(err){
                         images = [];   //清空
-                        callback(new Error("提问环节,数据库插入失败!"));
+                        callback(myError.databaseError);
                         return;
                     }else{
                         //成功写入数据库
@@ -100,7 +98,7 @@ function questionFormHandle(req,res,callback) {
  * @param res
  * @param callback
  */
-function answerFrmHandle(req,res,callback) {
+function answerFormHandle(req,res,callback) {
     let form = new formidable.IncomingForm();
 
     let upPath = path.normalize('C:\\Users\\sc\\Desktop\\毕业设计\\Q-A-images');  //路径矫正
@@ -115,7 +113,7 @@ function answerFrmHandle(req,res,callback) {
 
         let paramCorrect = paramCheck.answerParam(fields);  //// 键是否正确判断
         if (!paramCorrect) {
-            callback(new Error("回答表单属性出错"));
+            callback(myError.paramError);
             return;
         }
         if(files.hasOwnProperty("img")){   //若存在字段名为“img”,则表示有图片被上传
@@ -130,27 +128,27 @@ function answerFrmHandle(req,res,callback) {
 
             if(err){
                 images = [];   //清空
-                callback(new Error("回答环节,数据库查找失败!"));
+                callback(myError.databaseError);
                 return;
             }else if(data.length == 0){   //用户不存在，不可提问
                 images = [];   //清空
-                callback(new Error("用户不存在，不可回答"));
+                callback(myError.userNotRegisterError);
                 return;
             }else{
                 db.findDocument(dataBase,questionDatabase,{"_id":ObjectId(questionId)},{page:0,size:0},(err,data)=>{
                     if(err){
                         images = []; //清空
-                        callback(new Error("回答环节,数据库查找失败!"));
+                        callback(myError.databaseError);
                         return;
                     }else if(data.length == 0){  //问题不存在
                         images = [];  //清空
-                        callback(new Error("问题不存在，回答失败！"));
+                        callback(myError.questionIdExistError);
                         return;
                     }else{
                         db.insertDocument(dataBase,answerDatabase,[{"user_id":userId,"content":censord,"question_id":questionId,"img":images.toString()}],(err,data) => {
                             if(err){
                                 images = [];   //清空
-                                callback(new Error("回答环节,数据库插入失败!"));
+                                callback(myError.databaseError);
                                 return;
                             }else{
                                 //成功写入数据库
@@ -201,4 +199,4 @@ function reNameImage(files,upPath) {
 
 }
 
-module.exports = {questionFormHandle,answerFrmHandle};
+module.exports = {questionFormHandle,answerFormHandle};

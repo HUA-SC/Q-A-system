@@ -10,6 +10,8 @@ const session = require('express-session');  //导入session
 
 const bodyParser = require('body-parser');   //该中间件用于post请求的接收
 const router = require('./controller/router.js');//导入路由模块
+const backMessage = require('./module/backMessage.js'); //返回码
+
 /*中间件的使用-start*/
 // 设置express的session
 
@@ -23,7 +25,12 @@ const router = require('./controller/router.js');//导入路由模块
 // for parsing application/json
 app.use(bodyParser.json());
 
-/* 中间件的使用-end */
+//重置错误码信息
+app.all('*',(req,res,next) => {
+    backMessage.back('0','success','no result');
+    next();
+});
+
 
 //跨域请求配置
 app.all('*', function(req, res, next) {
@@ -33,6 +40,8 @@ app.all('*', function(req, res, next) {
     res.header("X-Powered-By",' 3.2.1');
     next();
 });
+/* 中间件的使用-end */
+
 
 //系统运行测试
 app.get('/root/ping',router.ping);
