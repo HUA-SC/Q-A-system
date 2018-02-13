@@ -39,6 +39,13 @@ var err = {
       msg:'问题_id号不存在，请检查！'
   },
 
+  // 未找到对应的图片
+  imageExistErro:{
+      code: '20002',
+      msg:",未找到对应的图片"
+
+  },
+
   //回答_id号不存在，请检查！
   answerIdExistError:{
       code:'30000',

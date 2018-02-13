@@ -18,6 +18,8 @@
   "homepage": "https://github.com/HUA-SC/Q-A-system#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "concat-stream": "^1.6.0",
+    "encode-image-stream": "^1.0.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "formidable": "^1.1.1",
