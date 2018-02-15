@@ -143,13 +143,26 @@ function signIn(req, res, next) {
  * @param res
  */
 function addQuestion(req, res, next) {
-    dirChange.questionFormHandle(req, res, (err) => {
+    dirChange.questionFormHandle(req, res, (err,data) => {
         if (err) {
-            res.json(backMessage.back(err.code, err.msg));
-            return;
+            return res.json(backMessage.back(err.code, err.msg));
+
         }
-        res.json(backMessage.back());
-        return;
+
+        if (data.hasOwnProperty('img') && data.img !== "") {
+            //split将string转换还为数组
+            myImageReader.readImage(data.img.split(','), (err,binaryImages) => {
+                if(err){
+                    return res.json(backMessage.back(err.code,err.msg));
+
+                }
+                data.img = binaryImages;   //将有图片的换为base64编码的格式
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+            });
+        }else{
+            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+        }
+
 
     });
 }
@@ -197,13 +210,23 @@ function deleteQuestion(req, res) {
  */
 function addAnswer(req, res) {
 
-    dirChange.answerFormHandle(req, res, (err) => {
+    dirChange.answerFormHandle(req, res, (err,data) => {
         if (err) {
-            res.json(backMessage.back(err.code, err.msg));
-            return;
+            return res.json(backMessage.back(err.code, err.msg));
         }
-        res.json(backMessage.back());
-        return;
+        if (data.hasOwnProperty('img') && data.img !== "") {
+            //split将string转换还为数组
+            myImageReader.readImage(data.img.split(','), (err,binaryImages) => {
+                if(err){
+                    return res.json(backMessage.back(err.code,err.msg));
+
+                }
+                data.img = binaryImages;   //将有图片的换为base64编码的格式
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+            });
+        }else{
+            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+        }
     })
 }
 
@@ -269,7 +292,7 @@ function findData(req, res) {
                 if (i === data.length) {
                     return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
                 }
-                if (data[i].hasOwnProperty('img')) {
+                if (data[i].hasOwnProperty('img') && data[i].img !== "") {
                     //split将string转换还为数组
                     myImageReader.readImage(data[i].img.split(','), (err,binaryImages) => {
                         if(err){
@@ -278,6 +301,8 @@ function findData(req, res) {
                         data[i].img = binaryImages;   //将有图片的换为base64编码的格式
                         iterator(i + 1);
                     });
+                }else{
+                    iterator(i + 1);
                 }
 
             })(0);

@@ -10,7 +10,8 @@ const ObjectId = require('mongodb').ObjectId;
 const formidable = require('formidable');
 const  util = require('util');
 const timestamp = require('time-stamp');
-const censor = require('word-sensitive');   //敏感词过滤，添加敏感次一个一行。。
+const censor = require('word-sensitive');   //敏感词过滤，添加敏感词一个一行。。
+const chinaTime = require('china-time');   //获取中文时间
 
 
 const db = require('../module/db.js');
@@ -63,26 +64,28 @@ function questionFormHandle(req,res,callback) {
 
         }
 
+        let createTime = chinaTime('YYYY-MM-DD HH:mm');   //获取时间（中国），精确到分即可
+
         db.findDocument(dataBase,logDatabase,{"_id":ObjectId(userId)},{page:0,size:0},(err,data) => {
 
             if(err){
                 images = [];   //清空
-                callback(myError.databaseError);
+                callback(myError.databaseError,null);
                 return;
             }else if(data.length == 0){   //用户不存在，不可提问
                 images = [];   //清空
-                callback(myError.userNotRegisterError);
+                callback(myError.userNotRegisterError,null);
                 return;
             }else{              //注册
-                db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString()}],(err,data) => {
+                db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString(),"create_time":createTime}],(err,data) => {
                     if(err){
                         images = [];   //清空
-                        callback(myError.databaseError);
+                        callback(myError.databaseError,null);
                         return;
                     }else{
                         //成功写入数据库
                         images = [];   //清空
-                        callback();
+                        callback(null,data.ops[0]);
                         return;
                     }
                 })
@@ -133,36 +136,38 @@ function answerFormHandle(req,res,callback) {
 
         censord = censor.filter(content);         //将敏感词变为**存入数据库
 
+
+        let createTime = chinaTime('YYYY-MM-DD HH:mm');   //获取时间（中国）
         db.findDocument(dataBase,logDatabase,{"_id":ObjectId(userId)},{page:0,size:0},(err,data) => {
 
             if(err){
                 images = [];   //清空
-                callback(myError.databaseError);
+                callback(myError.databaseError,null);
                 return;
             }else if(data.length == 0){   //用户不存在，不可提问
                 images = [];   //清空
-                callback(myError.userNotRegisterError);
+                callback(myError.userNotRegisterError,null);
                 return;
             }else{
                 db.findDocument(dataBase,questionDatabase,{"_id":ObjectId(questionId)},{page:0,size:0},(err,data)=>{
                     if(err){
                         images = []; //清空
-                        callback(myError.databaseError);
+                        callback(myError.databaseError,null);
                         return;
                     }else if(data.length == 0){  //问题不存在
                         images = [];  //清空
-                        callback(myError.questionIdExistError);
+                        callback(myError.questionIdExistError,null);
                         return;
                     }else{
-                        db.insertDocument(dataBase,answerDatabase,[{"user_id":userId,"content":censord,"question_id":questionId,"img":images.toString()}],(err,data) => {
+                        db.insertDocument(dataBase,answerDatabase,[{"user_id":userId,"content":censord,"question_id":questionId,"img":images.toString(),"create_time":createTime}],(err,data) => {
                             if(err){
                                 images = [];   //清空
-                                callback(myError.databaseError);
+                                callback(myError.databaseError,null);
                                 return;
                             }else{
                                 //成功写入数据库
                                 images = [];   //清空
-                                callback();
+                                callback(null,data.ops[0]);
                                 return;
                             }
                         })
