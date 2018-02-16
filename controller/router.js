@@ -91,10 +91,10 @@ function register(req, res, next) {
 
                             }
                             data.ops[0].avatar = binaryImages;   //将有图片的换为base64编码的格式
-                            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+                            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data.ops[0]));
                         });
                     }else{
-                        return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+                        return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data.ops[0]));
                     }
                 }
             })

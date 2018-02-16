@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/router.js" afterPath="$PROJECT_DIR$/controller/router.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,12 +21,11 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1660">
-              <caret line="304" column="28" lean-forward="false" selection-start-line="304" selection-start-column="28" selection-end-line="304" selection-end-column="28" />
+            <state relative-caret-position="358">
+              <caret line="96" column="119" lean-forward="false" selection-start-line="96" selection-start-column="119" selection-end-line="96" selection-end-column="119" />
               <folding>
                 <element signature="n#!!block;n#ping#0" expanded="false" />
                 <element signature="n#!!doc;n#register#0" expanded="false" />
-                <element signature="n#!!block;n#register#0" expanded="false" />
                 <element signature="n#!!block;n#signIn#0" expanded="false" />
                 <element signature="n#!!block;n#addQuestion#0" expanded="false" />
                 <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -34,20 +33,6 @@
                 <element signature="n#!!block;n#deleteAnswer#0" expanded="false" />
                 <element signature="n#!!block;n#findData#0" expanded="false" />
                 <element signature="n#!!block;n#errorHandler#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dirChange.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/dirChange.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="45" lean-forward="false" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-              <folding>
-                <element signature="n#!!block;n#questionFormHandle#0" expanded="false" />
-                <element signature="n#!!block;n#answerFormHandle#0" expanded="false" />
-                <element signature="n#!!block;n#reNameImage#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -380,7 +365,7 @@
       <workItem from="1518502793749" duration="13546000" />
       <workItem from="1518768710986" duration="2200000" />
       <workItem from="1518771549138" duration="50000" />
-      <workItem from="1518772077096" duration="101000" />
+      <workItem from="1518772077096" duration="1472000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -529,16 +514,23 @@
       <option name="project" value="LOCAL" />
       <updated>1518770794868</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="大体功能实现">
+      <created>1518772216379</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1518772216379</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135259000" />
+    <option name="totallyTimeSpent" value="136630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26532137" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18011957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7089041" sideWeight="0.60687596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -600,7 +592,8 @@
     <MESSAGE value="完成返回码的设计与添加" />
     <MESSAGE value="完成图片的读取，以及编码为base64格式后返回的功能" />
     <MESSAGE value="添加用户信息等" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加用户信息等" />
+    <MESSAGE value="大体功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="大体功能实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -616,7 +609,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -642,7 +634,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -690,7 +681,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -723,7 +713,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -749,7 +738,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -782,7 +770,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -822,7 +809,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -855,7 +841,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -888,7 +873,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -914,7 +898,6 @@
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
@@ -1068,12 +1051,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="304" column="28" lean-forward="false" selection-start-line="304" selection-start-column="28" selection-end-line="304" selection-end-column="28" />
+        <state relative-caret-position="358">
+          <caret line="96" column="119" lean-forward="false" selection-start-line="96" selection-start-column="119" selection-end-line="96" selection-end-column="119" />
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
             <element signature="n#!!doc;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
             <element signature="n#!!block;n#signIn#0" expanded="false" />
             <element signature="n#!!block;n#addQuestion#0" expanded="false" />
             <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
