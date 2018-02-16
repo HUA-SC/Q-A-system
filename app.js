@@ -67,6 +67,8 @@ app.post('/add/answer',router.addAnswer);
 //删除回答
 app.post('/delete/answer',router.deleteAnswer);
 
+//用户个人信息设置
+app.post("/setting/user",router.setUserMessage);
 //用于查找的接口
 app.post('/find',router.findData);
 
