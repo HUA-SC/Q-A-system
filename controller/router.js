@@ -139,9 +139,19 @@ function signIn(req, res, next) {
         }else if(data.length === 0){
             return res.json(backMessage.back(myError.userNotRegisterError.code,myError.userNotRegisterError.msg));
         } else {
-            console.log(data[0]);
-            res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data[0]));
-            return;
+            if (data[0].hasOwnProperty('avatar') && data[0].avatar !== "") {
+                //split将string转换还为数组
+                myImageReader.readImage(data[0].avatar.split(','), (err,binaryImages) => {
+                    if(err){
+                        return res.json(backMessage.back(err.code,err.msg));
+
+                    }
+                    data[0].avatar = binaryImages;   //将有图片的换为base64编码的格式
+                    return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+                });
+            }else{
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+            }
         }
     })
 
