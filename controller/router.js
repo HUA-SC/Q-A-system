@@ -4,7 +4,7 @@
  */
 
 const ObjectId = require('mongodb').ObjectId;
-const censor = require('word-sensitive');   //关键字过滤
+const censor = require('sensitive-word-filter');   //关键字过滤
 
 
 const db = require('../module/db.js');
@@ -74,14 +74,28 @@ function register(req, res, next) {
             db.insertDocument(database, logDatabase, [{
                 "user": queryUser,
                 "password": queryPwd,
-                "rank": "0"
+                "rank": "0",
+                "age" : "",
+                "avatar":"a.jpg",
+                "motto":""
             }], (err, data) => {
                 if (err) {
                     res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
                     return;
                 } else {
-                    res.json(backMessage.back());
-                    return;
+                    if (data.ops[0].hasOwnProperty('avatar') && data.ops[0].avatar !== "") {
+                        //split将string转换还为数组
+                        myImageReader.readImage(data.ops[0].avatar.split(','), (err,binaryImages) => {
+                            if(err){
+                                return res.json(backMessage.back(err.code,err.msg));
+
+                            }
+                            data.ops[0].avatar = binaryImages;   //将有图片的换为base64编码的格式
+                            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+                        });
+                    }else{
+                        return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+                    }
                 }
             })
         }
@@ -122,6 +136,8 @@ function signIn(req, res, next) {
         if (err) {
             res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
             return;
+        }else if(data.length === 0){
+            return res.json(backMessage.back(myError.userNotRegisterError.code,myError.userNotRegisterError.msg));
         } else {
             console.log(data[0]);
             res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data[0]));
@@ -136,6 +152,14 @@ function signIn(req, res, next) {
 //     req.session.destroy();    // session置空
 // }
 
+function setUserMessage(req,res) {
+    dirChange.uMessageFormHandle(req,res,(err,data) => {
+        if(err){
+            return res.json(backMessage.back(err.code,err.msg));
+        }
+        return res.json(backMessage.back());
+    })
+}
 
 /**
  * 发布问题
@@ -328,5 +352,5 @@ function errorHandler(err, req, res, next) {
 module.exports = {
     ping, register, signIn, findData,
     errorHandler, addQuestion, addAnswer,
-    deleteQuestion, deleteAnswer
+    deleteQuestion, deleteAnswer,setUserMessage
 };
