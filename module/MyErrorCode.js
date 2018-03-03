@@ -15,6 +15,7 @@ var err = {
       msg:'用户名或密码不可为空'
   },
 
+
   //注册，用户名已存在
   signExistError:{
       code:'10001',
@@ -25,6 +26,12 @@ var err = {
   signCensorError:{
     code:'10002',
     msg:'警告！用户名中存在敏感词语！'
+  },
+
+  //请求session时，没有数据
+  noSessionError:{
+      code:'10003',
+      msg:'没有session数据!'
   },
 
   //该用户未注册，无法提问

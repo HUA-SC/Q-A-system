@@ -13,15 +13,18 @@ const router = require('./controller/router.js');//导入路由模块
 const backMessage = require('./module/backMessage.js'); //返回码
 
 /*中间件的使用-start*/
-// 设置express的session
 
-// app.set('trust proxy', 1);// trust first proxy
-// app.use(session({
-//     secret: 'keyboard cat',
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: { secure: true }
-// }));
+// 设置express的session
+app.set('trust proxy', 1);// trust first proxy
+app.use(session({
+    secret: 'keyboard cat',
+    cookie: ('name', 'value', { path: '/', httpOnly: true,secure: false, maxAge:  60000 }),
+    //重新保存：强制会话保存即使是未修改的。默认为true但是得写上
+    resave: true,
+    //强制“未初始化”的会话保存到存储。
+    saveUninitialized: true,
+}));
+
 // for parsing application/json
 app.use(bodyParser.json());
 
@@ -53,7 +56,10 @@ app.post('/register',router.register);
 app.post('/logIn',router.signIn);
 
 //处理登出信息的接口
-// app.get('/logout',router.logOut);
+app.get('/logout',router.logOut);
+
+//请求session内容
+app.post('/query/session',router.querySession);
 
 //添加提问信息的接口
 app.post('/add/question',router.addQuestion);
@@ -69,6 +75,7 @@ app.post('/delete/answer',router.deleteAnswer);
 
 //用户个人信息设置
 app.post("/setting/user",router.setUserMessage);
+
 //用于查找的接口
 app.post('/find',router.findData);
 

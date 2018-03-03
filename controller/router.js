@@ -112,6 +112,8 @@ function register(req, res, next) {
  */
 function signIn(req, res, next) {
 
+    let _session = req.session;
+
     let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
     if (!paramCorrect) {
         res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
@@ -147,9 +149,15 @@ function signIn(req, res, next) {
 
                     }
                     data[0].avatar = binaryImages;   //将有图片的换为base64编码的格式
+
+                    console.log(data[0].user + " log in data[0]");
+                    console.log(JSON.stringify(req.session ) + " log in session");
+                    _session.user = data[0].user;
+                    console.log(JSON.stringify(_session) + " ok session");
                     return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
                 });
             }else{
+                _session.user = data[0].name;
                 return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
             }
         }
@@ -157,11 +165,38 @@ function signIn(req, res, next) {
 
 }
 
-//登出信息处理
-// function logOut(req,res,next) {
-//     req.session.destroy();    // session置空
-// }
+/**
+ * 登出信息处理
+ * @param req
+ * @param res
+ * @param next
+ */
+function logOut(req,res,next) {
+    req.session.destroy();    // session置空
+    return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+}
 
+/**
+ * 获取session
+ * @param req
+ * @param res
+ * @param next
+ */
+function querySession(req,res,next) {
+    console.log(JSON.stringify(req.session )+ " session");
+    console.log(req.session.user + " session user");
+    if(req.session.user){
+        return  res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"user":req.session.user}));
+    }else{
+        return res.json(backMessage.back(myError.noSessionError.code,myError.noSessionError.msg));
+    }
+
+}
+/**
+ * 用户个人设置
+ * @param req
+ * @param res
+ */
 function setUserMessage(req,res) {
     dirChange.uMessageFormHandle(req,res,(err,data) => {
         if(err){
@@ -363,4 +398,5 @@ module.exports = {
     ping, register, signIn, findData,
     errorHandler, addQuestion, addAnswer,
     deleteQuestion, deleteAnswer,setUserMessage
+    ,logOut,querySession
 };
