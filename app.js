@@ -3,27 +3,31 @@
  * 后台主入口文件app.js
  */
 
-const express = require("express");  //使用express框架
-const app = express();          //创建express入口函数
-const session = require('express-session');  //导入session
+const express = require("express");                                             //使用express框架
+const app = express();                                                          //创建express入口函数
+const session = require('express-session');                                     //导入session
+const helmet = require('helmet');                                               //抵御一些比较常见的安全web安全隐患
 
 
-const bodyParser = require('body-parser');   //该中间件用于post请求的接收
-const router = require('./controller/router.js');//导入路由模块
-const backMessage = require('./module/backMessage.js'); //返回码
+const bodyParser = require('body-parser');                                      //该中间件用于post请求的接收
+const router = require('./controller/router.js');                               //导入路由模块
+const backMessage = require('./module/backMessage.js');                         //返回码
 
 /*中间件的使用-start*/
 
 // 设置express的session
+let expiryDate = new Date( Date.now() + 60 * 60 * 1000 * 24 * 7 ); // 1周
 app.set('trust proxy', 1);// trust first proxy
 app.use(session({
     secret: 'keyboard cat',
-    cookie: ('name', 'value', { path: '/', httpOnly: true,secure: false, maxAge:  60000 }),
-
+    cookie: { path: '/',
+        httpOnly: true,
+        secure: false,
+        maxAge:  60000,
+        expiryDate:expiryDate,          //cookie过期时间
+    },
     //重新保存：强制会话保存，即使是未修改的。默认为true但是得写上
-
     resave: true,
-
     //强制“未初始化”的会话保存到存储。
     saveUninitialized: true,
 }));
@@ -46,6 +50,8 @@ app.all('*', function(req, res, next) {
     res.header("X-Powered-By",' 3.2.1');
     next();
 });
+
+app.use(helmet());
 /* 中间件的使用-end */
 
 
