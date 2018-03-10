@@ -30,8 +30,8 @@
       <file leaf-file-name="Q-A-API.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="167">
+              <caret line="346" column="0" lean-forward="false" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -324,7 +324,7 @@
       <workItem from="1520657577606" duration="2924000" />
       <workItem from="1520661702251" duration="127000" />
       <workItem from="1520663253458" duration="664000" />
-      <workItem from="1520664083851" duration="1021000" />
+      <workItem from="1520664083851" duration="1155000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -522,11 +522,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520664554626</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="markdown">
+      <created>1520665153198</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1520665153198</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160468000" />
+    <option name="totallyTimeSpent" value="160602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -926,8 +933,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="167">
+          <caret line="346" column="0" lean-forward="false" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
           <folding />
         </state>
       </provider>

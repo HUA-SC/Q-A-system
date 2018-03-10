@@ -15,6 +15,7 @@
 {"user": "user3", "password": "123456"}
 ```
 [入参说明]
+
 | user | password|
 | ------ | ------ |
 | 用户名 | 密码 |
@@ -57,6 +58,7 @@
  {"user": "user1", "password": "123456"}
 ```
 [入参说明]
+
 user | password
 ------- | -------
 用户名 | 密码
@@ -79,6 +81,7 @@ user | password
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 返回用户信息 | 登录成功
@@ -101,6 +104,7 @@ code | msg  | result | 说明
 ```
 
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 空 | 登出成功
@@ -121,6 +125,7 @@ code | msg  | result | 说明
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | {"user": 用户名} | 获取session成功
@@ -137,6 +142,7 @@ code | msg  | result | 说明
 "avatar":
 ```
 [入参说明]
+
 user_id | age|motto | img
 ------- | ------- | -------|-----    
 用户的唯一id | 年龄（可为空）|座右铭（可为空）| 头像（可为空）
@@ -149,6 +155,7 @@ user_id | age|motto | img
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 无| 设置成功
@@ -167,6 +174,7 @@ code | msg  | result | 说明
 "img":
 ```
 [入参说明]
+
 user_id | content | img
 ------- | ------- | -------
 提问用户的唯一id | 提问内容 | 提问说明用一张或多张图片（可为空）
@@ -187,6 +195,7 @@ user_id | content | img
 ```
 
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 返回用户信息 | 提问成功
@@ -209,6 +218,7 @@ code | msg  | result | 说明
 question_id|
 |-------|
 问题的唯一id|
+
 [出参示例]
 ```
 {
@@ -218,6 +228,7 @@ question_id|
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 无| 删除成功
@@ -238,6 +249,7 @@ code | msg  | result | 说明
 "img":
 ```
 [入参说明]
+
 user_id | question_id   |content | img
 ------- | -------|--------------- | -------
 回答用户的唯一id | 问题的唯一id | 回答内容|提问说明用一张或多张图片（可为空）
@@ -257,6 +269,7 @@ user_id | question_id   |content | img
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 无| 回答成功
@@ -289,6 +302,7 @@ answer_id|
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 无| 删除成功
@@ -309,6 +323,7 @@ code | msg  | result | 说明
 }
 ```
 [入参说明]
+
 collection|queryJson|
 -------|--------------
 |查询集合名称|查询json|
@@ -329,6 +344,7 @@ answers|所有回答存放集合|"_id":唯一标识（为24位16进制数）, "u
 }
 ```
 [出参说明]
+
 code | msg  | result | 说明
 ------- | ------- | -------|----|
 0 | sucess | 返回查询内容|查询成功
