@@ -134,7 +134,7 @@ code | msg  | result | 说明
 
 ### 个人信息设置接口（POST）
 /setting/user   
-[入参说明]
+[入参示例]
 ```
 "user_id":"5a86c7b49bca952c109b9671"
 "age":"11"
@@ -290,9 +290,10 @@ code | msg  | result | 说明
 ```
 [入参说明]  
 
-answer_id|
+|answer_id|
 |-------|
-回答的唯一id|
+|回答的唯一id|   
+
 [出参示例]
 ```
 {
@@ -324,12 +325,13 @@ code | msg  | result | 说明
 ```
 [入参说明]
 
-collection|queryJson|
--------|--------------
-|查询集合名称|查询json|
+collection | queryJson |
+|-------|-------|
+| 查询集合名称 | 查询json |
+
 [collection选择]
 |collection|说明|包含字段|
-|--|--|---|
+|-----|-----|------|
 |logInfo|用户登录注册及个人信息存放集合| "_id":唯一标识（为24位16进制数）,"user":用户名,"password":密码,"rank":用户级别（非管理员无修改权限）,"age":年年龄,"avatar":头像图片,"motto":用户签名
 questions|所有提问存放集合|"_id":唯一标识（为24位16进制数）, "user_id" : 关联的提问用户_id, "content" : 问题内容,"img" : 提问说明图片数组,"create_time" : 问题创建时间（后台创建，前台需要获取即可，无需传递该参数值）
 answers|所有回答存放集合|"_id":唯一标识（为24位16进制数）, "user_id" : 关联的回答用户_id, "content" : 回答内容,"img" : 回答说明图片数组,"create_time" : 问题创建时间（后台创建，前台需要获取即可，无需传递该参数值）,"question_id":关联问题_id
