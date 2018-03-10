@@ -329,7 +329,8 @@ collection | queryJson |
 |-------|-------|
 | 查询集合名称 | 查询json |
 
-[collection选择]
+[collection选择]  
+
 |collection|说明|包含字段|
 |-----|-----|------|
 | logInfo | 用户登录注册及个人信息存放集合 | "_id":唯一标识（为24位16进制数）,"user":用户名,"password":密码,"rank":用户级别（非管理员无修改权限）,"age":年年龄,"avatar":头像图片,"motto":用户签名
