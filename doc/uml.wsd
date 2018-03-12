@@ -1,0 +1,98 @@
+@startUml
+hide footbox
+actor 用户
+participant 界面
+participant 后台系统
+database 数据库
+
+note left of 用户:注册
+ 
+用户->界面:注册
+activate 界面
+界面->后台系统:注册数据
+activate 后台系统
+后台系统->数据库:查询
+alt 注册信息没问题
+数据库-->后台系统:信息
+后台系统->数据库:插入
+数据库-->后台系统:信息
+else 用户已存在/包含敏感词
+数据库-->后台系统:信息
+end
+deactivate 后台系统
+后台系统-->界面:信息
+deactivate 界面
+界面-->用户:信息
+
+
+note left of 用户:登录 
+
+界面->后台系统:session查询
+后台系统-->界面:数据
+alt 已登录
+界面->界面:界面跳转
+else 未登录
+用户->界面:登录
+activate 界面
+界面->后台系统:登录数据
+activate 后台系统
+后台系统->数据库:查询
+数据库-->后台系统:信息
+deactivate 后台系统
+后台系统-->界面:信息
+deactivate 界面
+界面-->用户:信息
+end
+
+note left of 用户:提问
+用户->界面:提问
+activate 界面
+界面->后台系统:数据
+activate 后台系统
+alt 提问成功
+后台系统->数据库:插入
+数据库-->后台系统:信息
+else 提问失败
+数据库-->后台系统:信息
+end
+deactivate 后台系统
+后台系统-->界面:信息
+deactivate 界面
+界面-->用户:信息
+
+
+note left of 用户:回答
+用户->界面:提问
+activate 界面
+界面->后台系统:数据
+activate 后台系统
+alt 回答成功
+后台系统->数据库:插入
+数据库-->后台系统:信息
+else 回答失败
+数据库-->后台系统:信息
+end
+deactivate 后台系统
+后台系统-->界面:信息
+deactivate 界面
+界面-->用户:信息
+
+
+
+note left of 用户:个人信息设置
+用户->界面:设置个人信息
+activate 界面
+界面->后台系统:数据
+activate 后台系统
+alt 修改成功
+后台系统->数据库:插入
+数据库-->后台系统:信息
+else 修改失败
+数据库-->后台系统:信息
+end
+deactivate 后台系统
+后台系统-->界面:信息
+deactivate 界面
+界面-->用户:信息
+
+@endUml
