@@ -2,125 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/uml.wsd" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问题及内容记录.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/example/camel.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/readme.markdown" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/camelize/test/camel.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/content-security-policy-builder/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/content-security-policy-builder/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/content-security-policy-builder/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/content-security-policy-builder/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/.jshintrc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/example/dash.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/readme.markdown" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dasherize/test/dash.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dns-prefetch-control/test/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/dont-sniff-mimetype/test/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/expect-ct/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/expect-ct/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/expect-ct/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/expect-ct/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/expect-ct/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/frameguard/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/frameguard/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/frameguard/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/frameguard/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/frameguard/lib/isstring.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/frameguard/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/boolean.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/plugin-types.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/report-uri.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/require-sri-for.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/sandbox.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/check-directive/source-list.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/check-options/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/contains-function.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/get-header-keys-for-browser.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/is-boolean.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/is-function.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/is-string.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/parse-dynamic-directives.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/lib/transform-directives-for-browser.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet-csp/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/CONTRIBUTING.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/HISTORY.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/helmet/security.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hide-powered-by/test/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hpkp/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hpkp/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hpkp/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hpkp/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hpkp/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hsts/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hsts/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hsts/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hsts/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/hsts/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/ienoopen/test/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/lodash.reduce/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/lodash.reduce/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/lodash.reduce/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/lodash.reduce/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/nocache/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/nocache/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/nocache/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/nocache/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/nocache/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/platform/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/platform/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/platform/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/platform/platform.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/referrer-policy/.npmignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/referrer-policy/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/referrer-policy/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/referrer-policy/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/referrer-policy/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/x-xss-protection/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/x-xss-protection/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/x-xss-protection/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/x-xss-protection/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/doc/um.puml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -135,11 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="uml.wsd" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uml.wsd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/uml.wsd">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="um.puml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/um.puml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -152,6 +44,7 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -208,6 +101,7 @@
         <option value="$PROJECT_DIR$/controller/router.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/doc/Q-A-API.md" />
+        <option value="$PROJECT_DIR$/doc/um.puml" />
       </list>
     </option>
   </component>
@@ -293,7 +187,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="nodejs_interpreter_path" value="C:/dev/nodejs/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="org.plantuml.idea.lang.settings.PlantUmlSettingsPage" />
     <property name="javascript.nodejs.core.library.configured.version" value="6.9.1" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
@@ -435,7 +329,7 @@
       <workItem from="1520664083851" duration="1227000" />
       <workItem from="1520665403451" duration="492000" />
       <workItem from="1520857146398" duration="362000" />
-      <workItem from="1520857590415" duration="932000" />
+      <workItem from="1520857590415" duration="1655000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -675,17 +569,24 @@
       <option name="project" value="LOCAL" />
       <updated>1520665889866</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="doc">
+      <created>1520858553319</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1520858553319</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162460000" />
+    <option name="totallyTimeSpent" value="163183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20750383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13859111" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20750383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59861594" sideWeight="0.6180867" order="7" side_tool="true" content_ui="tabs" />
@@ -754,7 +655,8 @@
     <MESSAGE value="添加api文档" />
     <MESSAGE value="添加web安全插件" />
     <MESSAGE value="markdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="markdown" />
+    <MESSAGE value="doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -763,13 +665,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1090,8 +985,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/uml.wsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/um.puml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
