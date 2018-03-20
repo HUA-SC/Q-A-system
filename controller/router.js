@@ -201,7 +201,7 @@ function logOut(req,res,next) {
  */
 function querySession(req,res,next) {
     if(req.session.user){
-        return  res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"user":req.session}));
+        return  res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"userData":req.session}));
     }else{
         return res.json(backMessage.back(myError.noSessionError.code,myError.noSessionError.msg));
     }
