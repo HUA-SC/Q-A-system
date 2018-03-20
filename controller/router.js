@@ -5,6 +5,7 @@
 
 const ObjectId = require('mongodb').ObjectId;
 const censor = require('sensitive-word-filter');   //关键字过滤
+const svgCaptcha = require('svg-captcha');          //验证码生成中间件
 
 
 const db = require('../module/db.js');
@@ -105,6 +106,22 @@ function register(req, res, next) {
 }
 
 /**
+ * 获取验证码信息
+ * @param req
+ * @param res
+ */
+function captcha(req, res) {
+    let captcha = svgCaptcha.create({
+        size: 5,                                        // 验证码长度
+        ignoreChars: '0o1i',                            // 验证码字符中排除 0o1il
+        noise: 2,                                       // 干扰线条的数量
+        height: 44
+    });
+    req.session.captcha = captcha.text;                     //验证码信息放于session传回
+    res.send(captcha.data);                                 //验证码svg图片传回
+}
+
+/**
  * 登录信息处理
  * @param req
  * @param res
@@ -183,10 +200,8 @@ function logOut(req,res,next) {
  * @param next
  */
 function querySession(req,res,next) {
-    console.log(JSON.stringify(req.session )+ " session");
-    console.log(req.session.user + " session user");
     if(req.session.user){
-        return  res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"user":req.session.user}));
+        return  res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"user":req.session}));
     }else{
         return res.json(backMessage.back(myError.noSessionError.code,myError.noSessionError.msg));
     }
@@ -398,5 +413,5 @@ module.exports = {
     ping, register, signIn, findData,
     errorHandler, addQuestion, addAnswer,
     deleteQuestion, deleteAnswer,setUserMessage
-    ,logOut,querySession
+    ,logOut,querySession,captcha
 };

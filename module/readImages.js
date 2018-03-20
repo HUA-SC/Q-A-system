@@ -13,6 +13,7 @@ const concatStream = require('concat-stream');              //将图片编码为
 
 const myError = require('./MyErrorCode.js');
 
+const imagePath = "../Q-A-images";
 /**
  * 根据图片路径查找图片（是否存在）
  * @param targetDir
@@ -73,13 +74,13 @@ function readImage(images, callback) {
             callback(null,binaryImages);
             return;
         }
-        searchFile('C:\\Users\\sc\\Desktop\\毕业设计\\Q-A-images', images[i], (err) => {
+        searchFile(imagePath, images[i], (err) => {
             if (err) {
                 myError.imageExistErro.msg = err + myError.imageExistErro.msg;
                 callback(myError.imageExistErro,null);
                 return;
             }
-            searchPhoto('C:\\Users\\sc\\Desktop\\毕业设计\\Q-A-images', images[i], (imageBase64) => {
+            searchPhoto(imagePath, images[i], (imageBase64) => {
                 binaryImages.push(imageBase64);
                 iterator(i + 1);     //异步回调中迭代
             });

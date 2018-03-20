@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/um.puml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/views/fgsd.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/Q-A-system.iml" afterPath="$PROJECT_DIR$/.idea/Q-A-system.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change beforePath="$PROJECT_DIR$/controller/router.js" afterPath="$PROJECT_DIR$/controller/router.js" />
+      <change beforePath="$PROJECT_DIR$/doc/问题及内容记录.md" afterPath="$PROJECT_DIR$/doc/问题及内容记录.md" />
+      <change beforePath="$PROJECT_DIR$/module/readImages.js" afterPath="$PROJECT_DIR$/module/readImages.js" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,22 +26,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="uml.wsd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/uml.wsd">
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="7" />
+            <state relative-caret-position="222">
+              <caret line="203" column="112" lean-forward="false" selection-start-line="203" selection-start-column="112" selection-end-line="203" selection-end-column="112" />
+              <folding>
+                <element signature="n#!!block;n#register#0" expanded="false" />
+                <element signature="n#!!block;n#captcha#0" expanded="false" />
+                <element signature="n#!!block;n#signIn#0" expanded="false" />
+                <element signature="n#!!block;n#logOut#0" expanded="false" />
+                <element signature="n#!!block;n#setUserMessage#0" expanded="false" />
+                <element signature="n#!!block;n#addQuestion#0" expanded="false" />
+                <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
+                <element signature="n#!!block;n#addAnswer#0" expanded="false" />
+                <element signature="n#!!block;n#deleteAnswer#0" expanded="false" />
+                <element signature="n#!!block;n#findData#0" expanded="false" />
+                <element signature="n#!!block;n#errorHandler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fgsd.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/fgsd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="um.puml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/um.puml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
+      <file leaf-file-name="Q-A-API.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -42,9 +76,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="UML Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -82,6 +116,9 @@
       </branch-storage>
     </favorite-branches>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response7.json" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -95,13 +132,15 @@
         <option value="$PROJECT_DIR$/module/errorMessage.js" />
         <option value="$PROJECT_DIR$/module/backMessage.js" />
         <option value="$PROJECT_DIR$/module/fileCheck.js" />
-        <option value="$PROJECT_DIR$/module/readImages.js" />
         <option value="$PROJECT_DIR$/module/dirChange.js" />
         <option value="$PROJECT_DIR$/module/MyErrorCode.js" />
-        <option value="$PROJECT_DIR$/controller/router.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/doc/Q-A-API.md" />
         <option value="$PROJECT_DIR$/doc/um.puml" />
+        <option value="$PROJECT_DIR$/doc/问题及内容记录.md" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/module/readImages.js" />
+        <option value="$PROJECT_DIR$/controller/router.js" />
+        <option value="$PROJECT_DIR$/views/fgsd.html" />
       </list>
     </option>
   </component>
@@ -117,12 +156,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="2" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-79" />
+    <option name="y" value="-21" />
     <option name="width" value="1378" />
     <option name="height" value="733" />
   </component>
@@ -161,6 +197,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,31 +209,70 @@
             <path>
               <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
               <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/link/web/learn/quickstart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Q-A-angular" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="nodejs_interpreter_path" value="C:/dev/nodejs/node" />
-    <property name="settings.editor.selected.configurable" value="org.plantuml.idea.lang.settings.PlantUmlSettingsPage" />
-    <property name="javascript.nodejs.core.library.configured.version" value="6.9.1" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="6.9.1" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sc\Desktop\毕业设计\Q-A-system\doc" />
       <recent name="C:\Users\sc\Desktop\毕业设计\Q-A-system\module" />
     </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://127.0.0.1:3001" />
+          <option name="urlPath" value="/r" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -329,7 +406,12 @@
       <workItem from="1520664083851" duration="1227000" />
       <workItem from="1520665403451" duration="492000" />
       <workItem from="1520857146398" duration="362000" />
-      <workItem from="1520857590415" duration="1655000" />
+      <workItem from="1520857590415" duration="1699000" />
+      <workItem from="1521204878104" duration="3992000" />
+      <workItem from="1521334911314" duration="2879000" />
+      <workItem from="1521339700491" duration="906000" />
+      <workItem from="1521548889999" duration="1074000" />
+      <workItem from="1521550211632" duration="3926000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -576,26 +658,34 @@
       <option name="project" value="LOCAL" />
       <updated>1520858553319</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="序列图">
+      <created>1520859286785</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1520859286785</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163183000" />
+    <option name="totallyTimeSpent" value="176004000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13859111" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20750383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5629575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23206107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59861594" sideWeight="0.6180867" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19400352" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15873016" sideWeight="0.3819133" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30097088" sideWeight="0.3819133" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -631,7 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成了登录界面的接口" />
     <MESSAGE value="完成查找数据库功能" />
     <MESSAGE value="增加注册功能，密码使用md5加密存入数据库" />
     <MESSAGE value="增加注册" />
@@ -656,7 +745,8 @@
     <MESSAGE value="添加web安全插件" />
     <MESSAGE value="markdown" />
     <MESSAGE value="doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc" />
+    <MESSAGE value="序列图" />
+    <option name="LAST_COMMIT_MESSAGE" value="序列图" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -665,14 +755,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="966">
@@ -893,33 +975,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/6.9.1/core-modules/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="1013" column="0" lean-forward="false" selection-start-line="1013" selection-start-column="0" selection-end-line="1013" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/6.9.1/core-modules/util.js" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js" />
     <entry file="file://$PROJECT_DIR$/module/AbstactError.js" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/6.9.1/core-modules/fs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="1868" column="0" lean-forward="false" selection-start-line="1868" selection-start-column="0" selection-end-line="1868" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/6.9.1/core-modules/fs.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/encode-image-stream/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-127">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/readImages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -944,13 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-737">
-          <caret line="184" column="36" lean-forward="false" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/MyErrorCode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1029">
@@ -958,21 +1014,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/doc/uml.wsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/问题及内容记录.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="389">
+            <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/um.puml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1974">
-          <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+        <state relative-caret-position="330">
+          <caret line="76" column="24" lean-forward="false" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#835#1189#0" expanded="false" />
+            <element signature="e#1444#1508#0" expanded="false" />
+            <element signature="e#1572#1918#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/readImages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="203" column="112" lean-forward="false" selection-start-line="203" selection-start-column="112" selection-end-line="203" selection-end-column="112" />
+          <folding>
+            <element signature="n#!!block;n#register#0" expanded="false" />
+            <element signature="n#!!block;n#captcha#0" expanded="false" />
+            <element signature="n#!!block;n#signIn#0" expanded="false" />
+            <element signature="n#!!block;n#logOut#0" expanded="false" />
+            <element signature="n#!!block;n#setUserMessage#0" expanded="false" />
+            <element signature="n#!!block;n#addQuestion#0" expanded="false" />
+            <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
+            <element signature="n#!!block;n#addAnswer#0" expanded="false" />
+            <element signature="n#!!block;n#deleteAnswer#0" expanded="false" />
+            <element signature="n#!!block;n#findData#0" expanded="false" />
+            <element signature="n#!!block;n#errorHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/fgsd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -982,20 +1096,9 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/uml.wsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/um.puml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>

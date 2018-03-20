@@ -13,36 +13,35 @@ const bodyParser = require('body-parser');                                      
 const router = require('./controller/router.js');                               //导入路由模块
 const backMessage = require('./module/backMessage.js');                         //返回码
 
-/*中间件的使用-start*/
+app.set('trust proxy', 1);
 
-// 设置express的session
 let expiryDate = new Date( Date.now() + 60 * 60 * 1000 * 24 * 7 ); // 1周
-app.set('trust proxy', 1);// trust first proxy
+
 app.use(session({
     secret: 'keyboard cat',
     cookie: { path: '/',
         httpOnly: true,
         secure: false,
         maxAge:  60000,
-        expiryDate:expiryDate,          //cookie过期时间
+        expiryDate:expiryDate,                          //cookie过期时间
     },
-    //重新保存：强制会话保存，即使是未修改的。默认为true但是得写上
-    resave: true,
-    //强制“未初始化”的会话保存到存储。
-    saveUninitialized: true,
-}));
+    resave: true,                               //重新保存：强制会话保存，即使是未修改的。默认为true但是得写上
+    saveUninitialized: true,                    //强制“未初始化”的会话保存到存储。
+}));        // 设置express的session
 
-// for parsing application/json
 app.use(bodyParser.json());
 
-//重置错误码信息
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(express.static("./public"));            //模板引擎+
+
+app.set("view engine","ejs");                   //静态服务
+
 app.all('*',(req,res,next) => {
     backMessage.back('0','success','no result');
     next();
-});
+});             //重置错误码信息
 
-
-//跨域请求配置
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");//允许的域，设置为任意
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With"); //设置允许的header类型
@@ -52,7 +51,11 @@ app.all('*', function(req, res, next) {
 });
 
 app.use(helmet());
-/* 中间件的使用-end */
+
+
+
+
+
 
 
 //系统运行测试
@@ -60,6 +63,9 @@ app.get('/root/ping',router.ping);
 
 //处理注册信息的接口
 app.post('/register',router.register);
+
+//获取验证码
+app.get('/captcha',router.captcha);
 
 //处理登录信息的接口
 app.post('/logIn',router.signIn);
@@ -91,5 +97,5 @@ app.post('/find',router.findData);
 //接下不满足上述所有接口的请求，并返回错误提示
 app.use(router.errorHandler);
 
-/*中间件的使用-end*/
+//监听端口
 app.listen(3001);
