@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="增加登录注册验证码图片中间件功能">
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/个人信息设置.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/删除回答接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/删除提问接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/提问接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/查询接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/注册接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/登出接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/登录接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/系统连通性测试接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/获取session接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/获取验证码接口.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/问题回答接口.md" />
+    <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/doc/Q-A-API.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="$PROJECT_DIR$/npm-debug.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -127,9 +115,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-79" />
-    <option name="y" value="-21" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="15" />
     <option name="width" value="1378" />
     <option name="height" value="733" />
   </component>
@@ -168,8 +155,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,7 +198,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Q-A-angular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.js" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="nodejs_interpreter_path" value="C:/dev/nodejs/node" />
@@ -270,6 +257,16 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js">
       <method>
         <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/package.json" />
+          <command value="start" />
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="nodejs" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <method>
+        <option name="NpmBeforeRunTask" enabled="false">
           <package-json value="$PROJECT_DIR$/package.json" />
           <command value="start" />
           <node-interpreter value="project" />
@@ -391,7 +388,11 @@
       <workItem from="1521334911314" duration="2879000" />
       <workItem from="1521339700491" duration="906000" />
       <workItem from="1521548889999" duration="1074000" />
-      <workItem from="1521550211632" duration="5618000" />
+      <workItem from="1521550211632" duration="5632000" />
+      <workItem from="1521635609327" duration="1189000" />
+      <workItem from="1521638870312" duration="603000" />
+      <workItem from="1521641021369" duration="134000" />
+      <workItem from="1521642569804" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -659,32 +660,39 @@
       <option name="project" value="LOCAL" />
       <updated>1521555591825</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="增加登录注册验证码图片中间件功能">
+      <created>1521555839893</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1521555839893</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177696000" />
+    <option name="totallyTimeSpent" value="179639000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="0" y="15" width="1378" height="733" extended-state="0" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5629575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2427481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2633997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59861594" sideWeight="0.6180867" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19400352" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2892416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.051779937" sideWeight="0.3819133" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48220065" sideWeight="0.3819133" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19400352" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -738,9 +746,9 @@
     <MESSAGE value="markdown" />
     <MESSAGE value="doc" />
     <MESSAGE value="序列图" />
-    <MESSAGE value="增加登录注册验证码图片中间件功能" />
     <MESSAGE value="修改接入文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改接入文档" />
+    <MESSAGE value="增加登录注册验证码图片中间件功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加登录注册验证码图片中间件功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -958,7 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +981,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -986,7 +991,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -997,7 +1001,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1008,7 +1011,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1019,7 +1021,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1030,7 +1031,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1041,7 +1041,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="289">
             <caret line="42" column="22" lean-forward="false" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1052,7 +1051,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="880">
             <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1063,7 +1061,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="352">
             <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1073,19 +1070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="203" column="103" lean-forward="false" selection-start-line="203" selection-start-column="103" selection-end-line="203" selection-end-column="103" />
-          <folding>
-            <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="n#!!block;n#captcha#0" expanded="false" />
-            <element signature="n#!!block;n#signIn#0" expanded="false" />
-            <element signature="n#!!block;n#logOut#0" expanded="false" />
-            <element signature="n#!!block;n#setUserMessage#0" expanded="false" />
-            <element signature="n#!!block;n#addQuestion#0" expanded="false" />
-            <element signature="n#!!block;n#deleteQuestion#0" expanded="false" />
-            <element signature="n#!!block;n#addAnswer#0" expanded="false" />
-            <element signature="n#!!block;n#deleteAnswer#0" expanded="false" />
-            <element signature="n#!!block;n#findData#0" expanded="false" />
-            <element signature="n#!!block;n#errorHandler#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1093,11 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="76" column="39" lean-forward="true" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
-          <folding>
-            <element signature="e#835#1189#0" expanded="false" />
-            <element signature="e#1444#1508#0" expanded="false" />
-            <element signature="e#1572#1918#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,34 +1085,17 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="154">
             <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="132">
-            <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md" />
     <entry file="file://$PROJECT_DIR$/doc/问答系统接入文档/问题回答接口.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="315">
             <caret line="42" column="22" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="42" selection-end-column="22" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1144,7 +1106,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="352">
             <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
