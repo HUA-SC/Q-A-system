@@ -1,5 +1,5 @@
 ### 获取session内容
-/query/session      
+http://118.24.83.20:3001/query/session      
 
 [出参示例]
 ```
