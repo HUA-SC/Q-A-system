@@ -22,7 +22,7 @@ function logParam(obj){
  * @returns {boolean}
  */
 function questionParam(obj){
-    if(obj.hasOwnProperty("content") && obj.hasOwnProperty("user_id")){
+    if(obj.hasOwnProperty("content") && obj.hasOwnProperty("user_id") && obj.hasOwnProperty("courseId")){
         // do nothing
     }else{
         return false;

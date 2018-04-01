@@ -22,7 +22,11 @@ const logDatabase = "logInfo";          //登陆注册数据库名
 const dataBase = "Q&A";                 //数据库名
 const questionDatabase = "questions";          //提问集合名
 const answerDatabase = "answers";           //回答集合名
+const coursesDatabase = 'courses';       //课程信息存放数据集合名
 
+const imagePath = "../Q-A-images";
+
+let otherCourse = '0';                      //其他课程标记
 let images = [];   //存放图片名称的数组
 
 /**
@@ -35,7 +39,7 @@ function questionFormHandle(req,res,callback) {
 
     let form = new formidable.IncomingForm();
 
-    let upPath = path.normalize('C:\\Users\\sc\\Desktop\\毕业设计\\Q-A-images');  //路径矫正
+    let upPath = path.normalize(imagePath);  //路径矫正
     form.uploadDir = upPath;   //设置缓存路径
     form.multiples = true;    //设置多文件上传
     // form.keepExtensions = true;   //设置保留文件后缀,取消此项设置，因为要重命名
@@ -45,7 +49,6 @@ function questionFormHandle(req,res,callback) {
         console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
 
     form.parse(req, function(err, fields, files) {
-
         let paramCorrect = paramCheck.questionParam(fields);  //// 键是否正确判断
         if (!paramCorrect) {
             callback(myError.paramError);
@@ -54,6 +57,8 @@ function questionFormHandle(req,res,callback) {
 
         let userId = fields.user_id.toString().trim();
         let content = fields.content.toString().trim();      //应由前端来做判断
+
+        let courseId = fields.courseId.toString().trim();
 
         censord = censor.filter(content);         //将敏感词变为**存入数据库
 
@@ -77,22 +82,37 @@ function questionFormHandle(req,res,callback) {
                 callback(myError.userNotRegisterError,null);
                 return;
             }else{              //注册
-                db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString(),"create_time":createTime}],(err,data) => {
+
+                let findCourse = {};
+                if (!(courseId === otherCourse)){
+                    findCourse = {'_id':ObjectId(courseId)};
+                }
+                db.findDocument(dataBase,coursesDatabase,findCourse,{page:0,size:0},(err,data) =>{
                     if(err){
                         images = [];   //清空
                         callback(myError.databaseError,null);
                         return;
-                    }else{
-                        //成功写入数据库
+                    }else if(data.length == 0){   //用户不存在，不可提问
                         images = [];   //清空
-                        callback(null,data.ops[0]);
+                        callback(myError.coursesNotFound,null);
                         return;
+                    }else{
+                        db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString(),"create_time":createTime,"courseId":courseId}],(err,data) => {
+                            if(err){
+                                images = [];   //清空
+                                callback(myError.databaseError,null);
+                                return;
+                            }else{
+                                //成功写入数据库
+                                images = [];   //清空
+                                callback(null,data.ops[0]);
+                                return;
+                            }
+                        })
                     }
-                })
+                });
             }
         });
-
-
     });
 
 

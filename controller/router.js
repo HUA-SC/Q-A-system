@@ -18,9 +18,10 @@ const myImageReader = require('../module/readImages.js');
 
 
 const database = 'Q&A';                 //数据库名
-const logDatabase = "logInfo";          //登陆注册集合名
-const questionDatabase = 'questions';   //提问集合名
-const answerDatabase = 'answers';       //回答集合名
+const logDatabase = "logInfo";          //登陆注册信息存放数据集合名
+const questionDatabase = 'questions';   //提问信息存放数据集合名
+const answerDatabase = 'answers';       //回答信息存放数据集合名
+const coursesDatabase = 'courses';       //课程信息存放数据集合名
 
 /**
  * 系统连通性测试
@@ -398,6 +399,115 @@ function findData(req, res) {
 }
 
 /**
+ * 添加课程信息
+ * @param req
+ * @param res
+ */
+function addCourse(req, res) {
+
+    if(!paramCheck.checkParam('course',req.body)){
+        return res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
+    }
+
+    let course = req.body.course.trim();
+
+    if(course === ''){
+        return res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
+    }
+
+    let findCourse = {'course':course};
+    db.findDocument(database,coursesDatabase,findCourse,{page:0,size:0},(err,data) => {
+        if(err){
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+        }else if(data.length !== 0){
+            return res.json(backMessage.back(myError.courseExistError.code, myError.courseExistError.msg));
+        }else{
+            db.insertDocument(database,coursesDatabase,[{'course':course}],(err,data) => {
+                if (err) {
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+                }
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
+            })
+        }
+    });
+
+    return;
+}
+
+/**
+ * 修改课程信息
+ * @param req
+ * @param res
+ */
+function updateCourse(req, res) {
+    if(!paramCheck.checkParam('course',req.body) || !paramCheck.checkParam('courseId',req.body)){
+        return res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
+    }
+
+    let course = req.body.course.trim();
+    let courseId = req.body.courseId.trim();
+
+    if(course === '' || courseId === ''){
+        return res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
+    }
+
+    let findCourse = {'course':course};
+    db.findDocument(database,coursesDatabase,findCourse,{page:0,size:0},(err,data) => {
+        if(err){
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+        }else if(data.length === 1){
+            if (data[0]._id.toString() === courseId){          //未作任何修改
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+            }
+            //修改的课程名称，已经存在了
+            return res.json(backMessage.back(myError.courseExistError.code, myError.courseExistError.msg));
+        }else{
+            db.updateDocument(database,coursesDatabase,{'_id':ObjectId(courseId)},{'course':course},(err,data) => {
+                if (err) {
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+                }
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
+            })
+        }
+    });
+}
+
+/**
+ * 删除课程信息
+ * @param req
+ * @param res
+ */
+function deleteCourse(req, res) {
+    if(!paramCheck.checkParam('course',req.body)){
+        return res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
+    }
+
+    let course = req.body.course.trim();
+    if(course === ''){
+        return res.json(backMessage.back(myError.paramError.code,myError.paramError.msg));
+    }
+
+    let findCourse = {'course':course};
+    db.findDocument(database,coursesDatabase,findCourse,{page:0,size:0},(err,data) => {
+        if(err){
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+        }else if(data.length === 0){
+            return res.json(backMessage.back(myError.coursesNotFound.code, myError.coursesNotFound.msg));
+        }else{
+            db.deleteDocument(database,coursesDatabase,{'course':course},(err,data) => {
+                if (err) {
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+                }
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
+            })
+        }
+    });
+}
+
+/**
  * 承接系统报错的中间件
  * @param err
  * @param req
@@ -412,6 +522,7 @@ function errorHandler(err, req, res, next) {
 module.exports = {
     ping, register, signIn, findData,
     errorHandler, addQuestion, addAnswer,
-    deleteQuestion, deleteAnswer,setUserMessage
-    ,logOut,querySession,captcha
+    deleteQuestion, deleteAnswer,setUserMessage,
+    logOut,querySession,captcha,addCourse,updateCourse,
+    deleteCourse
 };

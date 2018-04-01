@@ -31,7 +31,6 @@ app.use(session({
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.static("./public"));            //模板引擎+
 
@@ -93,6 +92,15 @@ app.post("/setting/user",router.setUserMessage);
 
 //用于查找的接口
 app.post('/find',router.findData);
+
+//添加课程信息
+app.post('/add/course',router.addCourse);
+
+//修改课程信息
+app.post('/update/course',router.updateCourse);
+
+//删除课程信息
+app.post('/delete/course',router.deleteCourse);
 
 //接下不满足上述所有接口的请求，并返回错误提示
 app.use(router.errorHandler);

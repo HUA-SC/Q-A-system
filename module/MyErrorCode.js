@@ -15,7 +15,6 @@ var err = {
       msg:'用户名或密码不可为空'
   },
 
-
   //注册，用户名已存在
   signExistError:{
       code:'10001',
@@ -58,9 +57,22 @@ var err = {
       code:'30000',
       msg:'回答_id号不存在，请检查！'
   },
+
+  //课程已存在
+  courseExistError:{
+      code:'40000',
+      msg:'课程名称已存在！'
+  },
+
+  //课程未找到
+  coursesNotFound:{
+      code:'40001',
+      msg:'未找到该课程'
+  },
+
   //数据库错误
   databaseError:{
-      code:'40000',
+      code:'50000',
       msg:'数据库连接失败'
   }
 
