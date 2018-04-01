@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-il.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/locale/mn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/locale/tg.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/locale/ug-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-il.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/mn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tg.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ug-cn.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/controller/router.js" afterPath="$PROJECT_DIR$/controller/router.js" />
-      <change beforePath="$PROJECT_DIR$/module/MyErrorCode.js" afterPath="$PROJECT_DIR$/module/MyErrorCode.js" />
-      <change beforePath="$PROJECT_DIR$/module/db.js" afterPath="$PROJECT_DIR$/module/db.js" />
-      <change beforePath="$PROJECT_DIR$/module/dirChange.js" afterPath="$PROJECT_DIR$/module/dirChange.js" />
-      <change beforePath="$PROJECT_DIR$/module/paramCheck.js" afterPath="$PROJECT_DIR$/module/paramCheck.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/china-time/package.json" afterPath="$PROJECT_DIR$/node_modules/china-time/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/Jakefile" afterPath="$PROJECT_DIR$/node_modules/ejs/Jakefile" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/README.md" afterPath="$PROJECT_DIR$/node_modules/ejs/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/ejs.js" afterPath="$PROJECT_DIR$/node_modules/ejs/ejs.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/ejs.min.js" afterPath="$PROJECT_DIR$/node_modules/ejs/ejs.min.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/lib/ejs.js" afterPath="$PROJECT_DIR$/node_modules/ejs/lib/ejs.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/ejs/lib/utils.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/package.json" afterPath="$PROJECT_DIR$/node_modules/ejs/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/helmet/package.json" afterPath="$PROJECT_DIR$/node_modules/helmet/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/index.js" afterPath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/package.json" afterPath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/package.json" afterPath="$PROJECT_DIR$/node_modules/nodemon/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sensitive-word-filter/package.json" afterPath="$PROJECT_DIR$/node_modules/sensitive-word-filter/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/svg-captcha/package.json" afterPath="$PROJECT_DIR$/node_modules/svg-captcha/package.json" />
-      <change beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/doc/进度记录/2018三月第四周进度记录.md" afterPath="$PROJECT_DIR$/doc/进度记录/2018三月第四周进度记录.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,7 +21,7 @@
       <file leaf-file-name="readImages.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/readImages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="0">
               <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding />
             </state>
@@ -87,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dirChange.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dirChange.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/dirChange.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="164">
@@ -95,6 +66,19 @@
               <folding>
                 <element signature="n#!!block;n#answerFormHandle#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018三月第四周进度记录.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/进度记录/2018三月第四周进度记录.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -201,6 +185,7 @@
         <option value="$PROJECT_DIR$/module/db.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/module/dirChange.js" />
+        <option value="$PROJECT_DIR$/doc/进度记录/2018三月第四周进度记录.md" />
       </list>
     </option>
   </component>
@@ -270,6 +255,17 @@
               <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Q-A-system" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="进度记录" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Q-A-system" type="b2602c69:ProjectViewProjectNode" />
@@ -788,17 +784,31 @@
       <option name="project" value="LOCAL" />
       <updated>1521970279306</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="完成分课程提问功能">
+      <created>1522565531146</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1522565531146</updated>
+    </task>
+    <task id="LOCAL-00045" summary="完成分课程提问功能">
+      <created>1522566134010</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1522566134010</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185402000" />
+    <option name="totallyTimeSpent" value="186658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5629575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21450381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21450381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59861594" sideWeight="0.6180867" order="7" side_tool="true" content_ui="tabs" />
@@ -855,7 +865,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加注册重名认证" />
     <MESSAGE value="排错" />
     <MESSAGE value="登录注册数据库添加字段“rank”;&#10;增加传入json键名是否正确判断;&#10;增加传入json键值是否为空判断;" />
     <MESSAGE value="修复图片批量上传bug；&#10;增加容错判断" />
@@ -880,7 +889,8 @@
     <MESSAGE value="增加登录注册验证码图片中间件功能" />
     <MESSAGE value="修改doc" />
     <MESSAGE value="小修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="小修改" />
+    <MESSAGE value="完成分课程提问功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成分课程提问功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -889,13 +899,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -1071,7 +1074,7 @@
     <entry file="file://$PROJECT_DIR$/doc/Q-A-API.md" />
     <entry file="file://$PROJECT_DIR$/module/readImages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="0">
           <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
           <folding />
         </state>
@@ -1207,16 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/进度记录/2018年三月第三周进度记录.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="259">
-            <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-110">
@@ -1240,6 +1233,28 @@
           <folding>
             <element signature="n#!!block;n#answerFormHandle#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/进度记录/2018年三月第三周进度记录.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="174">
+            <caret line="11" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="17" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/进度记录/2018三月第四周进度记录.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
