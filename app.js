@@ -13,6 +13,7 @@ const bodyParser = require('body-parser');                                      
 const router = require('./controller/router.js');                               //导入路由模块
 const backMessage = require('./module/backMessage.js');                         //返回码
 
+
 app.set('trust proxy', 1);
 
 let expiryDate = new Date( Date.now() + 60 * 60 * 1000 * 24 * 7 ); // 1周
@@ -50,10 +51,6 @@ app.all('*', function(req, res, next) {
 });
 
 app.use(helmet());
-
-
-
-
 
 
 

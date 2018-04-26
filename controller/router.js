@@ -78,26 +78,14 @@ function register(req, res, next) {
                 "password": queryPwd,
                 "rank": "0",
                 "age" : "",
-                "avatar":"a.jpg",
+                "img":"a.jpg",
                 "motto":""
-            }], (err, data) => {
+            }], (err) => {
                 if (err) {
                     res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
                     return;
                 } else {
-                    if (data.ops[0].hasOwnProperty('avatar') && data.ops[0].avatar !== "") {
-                        //split将string转换还为数组
-                        myImageReader.readImage(data.ops[0].avatar.split(','), (err,binaryImages) => {
-                            if(err){
-                                return res.json(backMessage.back(err.code,err.msg));
-
-                            }
-                            data.ops[0].avatar = binaryImages;   //将有图片的换为base64编码的格式
-                            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data.ops[0]));
-                        });
-                    }else{
-                        return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data.ops[0]));
-                    }
+                    return res.json(backMessage.back());
                 }
             })
         }
@@ -159,14 +147,14 @@ function signIn(req, res, next) {
         }else if(data.length === 0){
             return res.json(backMessage.back(myError.userNotRegisterError.code,myError.userNotRegisterError.msg));
         } else {
-            if (data[0].hasOwnProperty('avatar') && data[0].avatar !== "") {
+            if (data[0].hasOwnProperty('img') && data[0].img !== "") {
                 //split将string转换还为数组
-                myImageReader.readImage(data[0].avatar.split(','), (err,binaryImages) => {
+                myImageReader.readImage(data[0].img.split(','), (err,binaryImages) => {
                     if(err){
                         return res.json(backMessage.back(err.code,err.msg));
 
                     }
-                    data[0].avatar = binaryImages;   //将有图片的换为base64编码的格式
+                    data[0].img = binaryImages;   //将有图片的换为base64编码的格式
 
                     console.log(data[0].user + " log in data[0]");
                     console.log(JSON.stringify(req.session ) + " log in session");
@@ -201,7 +189,7 @@ function logOut(req,res,next) {
  * @param next
  */
 function querySession(req,res,next) {
-    if(req.session.user){
+    if(req.session.user || req.session.captcha){
         return  res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"userData":req.session}));
     }else{
         return res.json(backMessage.back(myError.noSessionError.code,myError.noSessionError.msg));
