@@ -32,6 +32,10 @@ var err = {
       code:'10003',
       msg:'没有session数据!'
   },
+  notLogIn:{
+      code:'10004',
+      msg:'用户未登录!'
+  },
 
   //该用户未注册，无法提问
   userNotRegisterError:{

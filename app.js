@@ -7,12 +7,10 @@ const express = require("express");                                             
 const app = express();                                                          //创建express入口函数
 const session = require('express-session');                                     //导入session
 const helmet = require('helmet');                                               //抵御一些比较常见的安全web安全隐患
-
-
 const bodyParser = require('body-parser');                                      //该中间件用于post请求的接收
 const router = require('./controller/router.js');                               //导入路由模块
 const backMessage = require('./module/backMessage.js');                         //返回码
-
+const logSystem = require('./module/logSystem.js');
 
 app.set('trust proxy', 1);
 
@@ -52,7 +50,8 @@ app.all('*', function(req, res, next) {
 
 app.use(helmet());
 
-
+//用户登录检测
+app.use(router.checkLog);
 
 //系统运行测试
 app.get('/root/ping',router.ping);
@@ -101,6 +100,8 @@ app.post('/delete/course',router.deleteCourse);
 
 //接下不满足上述所有接口的请求，并返回错误提示
 app.use(router.errorHandler);
+
+app.all('*',logSystem.log);
 
 //监听端口
 app.listen(3001);

@@ -44,9 +44,9 @@ function questionFormHandle(req,res,callback) {
     form.multiples = true;    //设置多文件上传
     // form.keepExtensions = true;   //设置保留文件后缀,取消此项设置，因为要重命名
 
-    form.on('progress',function(bytesReceived, bytesExpected){
-        //打印进度
-        console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
+    // form.on('progress',function(bytesReceived, bytesExpected){
+    //     //打印进度
+    //     console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
 
     form.parse(req, function(err, fields, files) {
         let paramCorrect = paramCheck.questionParam(fields);  //// 键是否正确判断
@@ -133,9 +133,9 @@ function answerFormHandle(req,res,callback) {
     form.multiples = true;    //设置多文件上传
     // form.keepExtensions = true;   //设置保留文件后缀,取消此项设置，因为要重命名
 
-    form.on('progress',function(bytesReceived, bytesExpected){
-        //打印进度
-        console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
+    // form.on('progress',function(bytesReceived, bytesExpected){
+    //     //打印进度
+    //     console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
 
 
     form.parse(req, function(err, fields, files) {
@@ -210,9 +210,9 @@ function uMessageFormHandle(req,res,callback) {
     form.multiples = true;    //设置多文件上传
     // form.keepExtensions = true;   //设置保留文件后缀,取消此项设置，因为要重命名
 
-    form.on('progress',function(bytesReceived, bytesExpected){
-        //打印进度
-        console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
+    // form.on('progress',function(bytesReceived, bytesExpected){
+    //     //打印进度
+    //     console.log(((bytesReceived / bytesExpected)*100)+"% uploaded");});
 
 
     form.parse(req, function(err, fields, files) {

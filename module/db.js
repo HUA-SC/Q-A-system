@@ -32,7 +32,7 @@ function insertDocument (coll,document,jsonArr,callback) {
             return;
         }
 
-        console.log("连接到数据库");
+        // console.log("连接到数据库");
 
         // Get the documents collection
         let collection = db.collection(document.toString());
@@ -45,9 +45,9 @@ function insertDocument (coll,document,jsonArr,callback) {
                 db.close();
                 return;
             }
-            console.log(`Inserted ${result.ops.length} documents into the document collection`);
+            // console.log(`Inserted ${result.ops.length} documents into the document collection`);
             callback(null,result);
-            console.log(result);
+            // console.log(result);
             db.close();
             return;
         });
@@ -67,7 +67,7 @@ function findDocument(coll,document,jsonArr,pageObj,callback) {
             db.close();
             return;
         }
-        console.log('成功连接数据库！');
+        // console.log('成功连接数据库！');
        // var collection = db.collection(document.toString());
 
         let collection = db.collection(document.toString());
@@ -86,7 +86,7 @@ function findDocument(coll,document,jsonArr,pageObj,callback) {
                 console.log(err);
                 return;
             }
-            console.log(`Found ${docs.length} records`);
+            // console.log(`Found ${docs.length} records`);
             callback(null, docs);
             db.close();
             return;
@@ -118,7 +118,7 @@ function deleteDocument(coll,document,jsonArr,callback) {
                 return;
             }
 
-            console.log(`Removed the document`);
+            // console.log(`Removed the document`);
             callback(null,result);
             db.close();
             return;
@@ -150,7 +150,7 @@ function updateDocument(coll,document,queryJson,updataJson,callback) {
                     return;
                 }
 
-                console.log("Updated the document");
+                // console.log("Updated the document");
                 callback(null,result);
                 db.close();
                 return;
