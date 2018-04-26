@@ -50,6 +50,7 @@ app.all('*', function(req, res, next) {
 
 app.use(helmet());
 
+app.use(logSystem.log);
 //用户登录检测
 app.use(router.checkLog);
 
@@ -101,7 +102,6 @@ app.post('/delete/course',router.deleteCourse);
 //接下不满足上述所有接口的请求，并返回错误提示
 app.use(router.errorHandler);
 
-app.all('*',logSystem.log);
 
 //监听端口
 app.listen(3001);

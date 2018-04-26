@@ -30,8 +30,8 @@ const coursesDatabase = 'courses';       //课程信息存放数据集合名
  * @param next
  */
 function ping(req, res, next) {
-    res.send("pang");
-    return next();
+    return res.send("pang");
+
 
 }
 
@@ -44,22 +44,22 @@ function ping(req, res, next) {
 function register(req, res, next) {
     let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
     if (!paramCorrect) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return;
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let queryUser = req.body.user.trim().toString();
     let queryPwd = req.body.password.trim().toString();
     if (!queryUser || !queryPwd) {
-        res.json(backMessage.back(myError.signError.code, myError.signError.msg));
-        return next();
+        return res.json(backMessage.back(myError.signError.code, myError.signError.msg));
+
     }
 
     censord = censor.filter(queryUser);
     if (queryUser !== censord) {
         //注册用户名包含敏感信息
-        res.json(backMessage.back(myError.signCensorError.code, myError.signCensorError.msg));
-        return next();
+        return res.json(backMessage.back(myError.signCensorError.code, myError.signCensorError.msg));
+
     }
 
 
@@ -69,11 +69,11 @@ function register(req, res, next) {
     db.findDocument(database, logDatabase, findUser, {page: 0, size: 0}, (err, data) => {
 
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length !== 0) {   //有数据证明用户名存在，不予注册
-            res.json(backMessage.back(myError.signExistError.code, myError.signExistError.msg));
-            return next();
+            return res.json(backMessage.back(myError.signExistError.code, myError.signExistError.msg));
+
         } else {              //注册
             db.insertDocument(database, logDatabase, [{
                 "user": queryUser,
@@ -84,17 +84,16 @@ function register(req, res, next) {
                 "motto": ""
             }], (err) => {
                 if (err) {
-                    res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-                    return next();
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
                 } else {
-                    res.json(backMessage.back());
-                    return next();
+                    return res.json(backMessage.back());
+
                 }
             })
         }
-        return next();
-    })
-    return next();
+    });
+    return;
 }
 
 /**
@@ -110,8 +109,7 @@ function captcha(req, res, next) {
         height: 44
     });
     req.session.captcha = captcha.text;                     //验证码信息放于session传回
-    res.send(captcha.data);                                 //验证码svg图片传回
-    return next();
+    return res.send(captcha.data);                                 //验证码svg图片传回
 }
 
 /**
@@ -126,17 +124,16 @@ function signIn(req, res, next) {
 
     let paramCorrect = paramCheck.logParam(req.body);   // 键是否正确判断
     if (!paramCorrect) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
 
     let queryUser = req.body.user.trim().toString();
     let queryPwd = req.body.password.trim().toString();
     if (!queryUser || !queryPwd) {
-        console.log(backMessage.message.result);
-        res.json(backMessage.back(myError.signError.code, myError.signError.msg));
-        return next();
+        // console.log(backMessage.message.result);
+        return res.json(backMessage.back(myError.signError.code, myError.signError.msg));
     }
     queryPwd = encrypt.encryption(queryPwd);   //密码用MD5加密
 
@@ -146,36 +143,35 @@ function signIn(req, res, next) {
         size: 0
     }, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length === 0) {
-            res.json(backMessage.back(myError.userNotRegisterError.code, myError.userNotRegisterError.msg));
-            return next();
+            return res.json(backMessage.back(myError.userNotRegisterError.code, myError.userNotRegisterError.msg));
+
         } else {
             if (data[0].hasOwnProperty('img') && data[0].img !== "") {
                 //split将string转换还为数组
                 myImageReader.readImage(data[0].img.split(','), (err, binaryImages) => {
                     if (err) {
-                        res.json(backMessage.back(err.code, err.msg));
-                        return next();
+                        return res.json(backMessage.back(err.code, err.msg));
                     }
                     data[0].img = binaryImages;   //将有图片的换为base64编码的格式
 
-                    console.log(data[0].user + " log in data[0]");
-                    console.log(JSON.stringify(req.session) + " log in session");
+                    // console.log(data[0].user + " log in data[0]");
+                    // console.log(JSON.stringify(req.session) + " log in session");
                     _session.user = data[0].user;
-                    console.log(JSON.stringify(_session) + " ok session");
-                    res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-                    return next();
+                    // console.log(JSON.stringify(_session) + " ok session");
+                    return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
                 });
             } else {
                 _session.user = data[0].name;
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
             }
         }
-    })
-    return next();
+    });
+    return;
 
 }
 
@@ -187,8 +183,8 @@ function signIn(req, res, next) {
  */
 function logOut(req, res, next) {
     req.session.destroy();    // session置空
-    res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
-    return next();
+    return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
 }
 
 /**
@@ -199,13 +195,13 @@ function logOut(req, res, next) {
  */
 function querySession(req, res, next) {
     if (req.session.user || req.session.captcha) {
-        res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"userData": req.session}));
-        return next();
+        return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, {"userData": req.session}));
+
     } else {
-        res.json(backMessage.back(myError.noSessionError.code, myError.noSessionError.msg));
-        return next();
+        return res.json(backMessage.back(myError.noSessionError.code, myError.noSessionError.msg));
+
     }
-    return next();
+    return;
 }
 
 /**
@@ -216,13 +212,13 @@ function querySession(req, res, next) {
 function setUserMessage(req, res, next) {
     dirChange.uMessageFormHandle(req, res, (err, data) => {
         if (err) {
-            res.json(backMessage.back(err.code, err.msg));
-            return next();
+            return res.json(backMessage.back(err.code, err.msg));
+
         }
-        res.json(backMessage.back());
-        return next();
+        return res.json(backMessage.back());
+
     })
-    return next();
+
 }
 
 /**
@@ -233,28 +229,28 @@ function setUserMessage(req, res, next) {
 function addQuestion(req, res, next) {
     dirChange.questionFormHandle(req, res, (err, data) => {
         if (err) {
-            res.json(backMessage.back(err.code, err.msg));
-            return next();
+            return res.json(backMessage.back(err.code, err.msg));
+
 
         }
         if (data.hasOwnProperty('img') && data.img !== "") {
             //split将string转换还为数组
             myImageReader.readImage(data.img.split(','), (err, binaryImages) => {
                 if (err) {
-                    res.json(backMessage.back(err.code, err.msg));
-                    return next();
+                    return res.json(backMessage.back(err.code, err.msg));
+
 
                 }
                 data.img = binaryImages;   //将有图片的换为base64编码的格式
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
             });
         } else {
-            res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-            return next();
+            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
         }
     });
-    return next();
+    return;
 }
 
 /**
@@ -266,31 +262,31 @@ function deleteQuestion(req, res, next) {
 
     let paramCorrect = paramCheck.checkParam('question_id', req.body);
     if (!paramCorrect) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
     let questionId = req.body.question_id;  //待删除问题_id
 
 
     db.findDocument(database, questionDatabase, {"_id": ObjectId(questionId)}, {page: 0, size: 0}, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length == 0) { //问题id不存在
             return res.json(backMessage.back(myError.questionIdExistError.code, myError.questionIdExistError.msg));
         } else {
             db.deleteDocument(database, questionDatabase, {"_id": ObjectId(questionId)}, (err, data) => {
                 if (err) {
-                    res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-                    return next();
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
                 }
-                res.json(backMessage.back());  //提问删除成功
-                return next();
+                return res.json(backMessage.back());  //提问删除成功
+
             })
         }
     });
 
-    return next();
+    return;
 }
 
 /**
@@ -302,27 +298,27 @@ function addAnswer(req, res, next) {
 
     dirChange.answerFormHandle(req, res, (err, data) => {
         if (err) {
-            res.json(backMessage.back(err.code, err.msg));
-            return next();
+            return res.json(backMessage.back(err.code, err.msg));
+
         }
         if (data.hasOwnProperty('img') && data.img !== "") {
             //split将string转换还为数组
             myImageReader.readImage(data.img.split(','), (err, binaryImages) => {
                 if (err) {
-                    res.json(backMessage.back(err.code, err.msg));
-                    return next();
+                    return res.json(backMessage.back(err.code, err.msg));
+
 
                 }
                 data.img = binaryImages;   //将有图片的换为base64编码的格式
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
             });
         } else {
-            res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-            return next();
+            return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
         }
     });
-    return next();
+    return;
 }
 
 /**
@@ -333,30 +329,30 @@ function addAnswer(req, res, next) {
 function deleteAnswer(req, res, next) {
     let paramCorrect = paramCheck.checkParam('answer_id', req.body);
     if (!paramCorrect) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
     let answerId = req.body.answer_id;  //待删除问题_id
 
     db.findDocument(database, answerDatabase, {"_id": ObjectId(answerId)}, {page: 0, size: 0}, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length == 0) {  //问题不存在
-            res.json(backMessage.back(myError.answerIdExistError.code, myError.answerIdExistError.msg));
-            return next();
+            return res.json(backMessage.back(myError.answerIdExistError.code, myError.answerIdExistError.msg));
+
         } else {
             db.deleteDocument(database, answerDatabase, {"_id": ObjectId(answerId)}, (err, data) => {
                 if (err) {
-                    res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-                    return next();
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
                 }
-                res.json(backMessage.back());   //删除成功
-                return next();
+                return res.json(backMessage.back());   //删除成功
+
             });
         }
     });
-    return next();
+    return;
 }
 
 /**
@@ -368,8 +364,8 @@ function deleteAnswer(req, res, next) {
 function findData(req, res, next) {
 
     if (!paramCheck.checkParam('collection', req.body) && !paramCheck('queryJson', req.body)) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let queryDatabase = req.body.collection.trim();       //要查询的数据库
@@ -380,23 +376,23 @@ function findData(req, res, next) {
     }
     db.findDocument(database, queryDatabase, queryJson, {page: 0, size: 0}, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else {
             console.log(data);
 
 
             (function iterator(i) {
                 if (i === data.length) {
-                    res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
-                    return next();
+                    return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg, data));
+
                 }
                 if (data[i].hasOwnProperty('img') && data[i].img !== "") {
                     //split将string转换还为数组
                     myImageReader.readImage(data[i].img.split(','), (err, binaryImages) => {
                         if (err) {
-                            res.json(backMessage.back(err.code, err.msg));
-                            return next();
+                            return res.json(backMessage.back(err.code, err.msg));
+
                         }
                         data[i].img = binaryImages;   //将有图片的换为base64编码的格式
                         iterator(i + 1);
@@ -421,39 +417,39 @@ function findData(req, res, next) {
 function addCourse(req, res, next) {
 
     if (!paramCheck.checkParam('course', req.body)) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let course = req.body.course.trim();
 
     if (course === '') {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let findCourse = {'course': course};
     db.findDocument(database, coursesDatabase, findCourse, {page: 0, size: 0}, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length !== 0) {
-            res.json(backMessage.back(myError.courseExistError.code, myError.courseExistError.msg));
-            return next();
+            return res.json(backMessage.back(myError.courseExistError.code, myError.courseExistError.msg));
+
         } else {
             db.insertDocument(database, coursesDatabase, [{'course': course}], (err, data) => {
                 if (err) {
-                    res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-                    return next();
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
                 }
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
 
             })
         }
     });
 
-    return next();
+    return;
 }
 
 /**
@@ -463,44 +459,44 @@ function addCourse(req, res, next) {
  */
 function updateCourse(req, res, next) {
     if (!paramCheck.checkParam('course', req.body) || !paramCheck.checkParam('courseId', req.body)) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let course = req.body.course.trim();
     let courseId = req.body.courseId.trim();
 
     if (course === '' || courseId === '') {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let findCourse = {'course': course};
     db.findDocument(database, coursesDatabase, findCourse, {page: 0, size: 0}, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length === 1) {
             if (data[0]._id.toString() === courseId) {          //未作任何修改
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
             }
             //修改的课程名称，已经存在了
-            res.json(backMessage.back(myError.courseExistError.code, myError.courseExistError.msg));
-            return next();
+            return res.json(backMessage.back(myError.courseExistError.code, myError.courseExistError.msg));
+
         } else {
             db.updateDocument(database, coursesDatabase, {'_id': ObjectId(courseId)}, {'course': course}, (err, data) => {
                 if (err) {
-                    res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-                    return next();
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
                 }
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
 
             })
         }
     });
-    return next();
+    return;
 }
 
 /**
@@ -510,37 +506,37 @@ function updateCourse(req, res, next) {
  */
 function deleteCourse(req, res, next) {
     if (!paramCheck.checkParam('course', req.body)) {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let course = req.body.course.trim();
     if (course === '') {
-        res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
-        return next();
+        return res.json(backMessage.back(myError.paramError.code, myError.paramError.msg));
+
     }
 
     let findCourse = {'course': course};
     db.findDocument(database, coursesDatabase, findCourse, {page: 0, size: 0}, (err, data) => {
         if (err) {
-            res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-            return next();
+            return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
         } else if (data.length === 0) {
-            res.json(backMessage.back(myError.coursesNotFound.code, myError.coursesNotFound.msg));
-            return next();
+            return res.json(backMessage.back(myError.coursesNotFound.code, myError.coursesNotFound.msg));
+
         } else {
             db.deleteDocument(database, coursesDatabase, {'course': course}, (err, data) => {
                 if (err) {
-                    res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
-                    return next();
+                    return res.json(backMessage.back(myError.databaseError.code, myError.databaseError.msg));
+
                 }
-                res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
-                return next();
+                return res.json(backMessage.back(backMessage.message.code, backMessage.message.msg));
+
 
             })
         }
     });
-    return next();
+    return;
 }
 
 /**
@@ -552,23 +548,23 @@ function deleteCourse(req, res, next) {
  */
 function errorHandler(err, req, res, next) {
     console.log(err + "err");
-    res.json({'code': '00001', 'msg': '系统错误', 'result': err.stack});
-    return next();
+    return res.json({'code': '00001', 'msg': '系统错误', 'result': err.stack});
+
 }
 
 function checkLog(req,res,next) {
     let url = req.url;
     let method = req.method.toLowerCase();
     if (method === 'post'){                                 //所有post数据除了'/login'、 'register'、'/query/session'这三个接口，其余均需要登录后才可以使用
-        if (url !== '/login' || url !== '/register' || url !== '/query/session' ){
-            if (req.session.user){
-                next();
+        if (url !== '/login' && url !== '/register' && url !== '/query/session' ){
+            if (! req.session.user){
+                return res.send(backMessage.back(myError.notLogIn.code,myError.notLogIn.msg));
             }else{
-                res.send(backMessage.back(myError.notLogIn.code,myError.notLogIn.msg));
-                logSystem.log(req,res);
+                 return next();
             }
         }
     }
+    return next();
 
 }
 module.exports = {

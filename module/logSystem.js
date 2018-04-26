@@ -1,5 +1,5 @@
 
-function log(req,res){
+function log(req,res,next){
     let log = {};
     log.time = new Date();
     log.method = req.method;
@@ -8,7 +8,8 @@ function log(req,res){
     if (req.method.toLowerCase() === 'post'){           //若数据时multipart/form-data，不记录数据内容
         log.queryData = req.body;
     }
-    console.log(JSON.stringify(log))
+    console.log(JSON.stringify(log));
+    return next();
 }
 
 module.exports = {log};
