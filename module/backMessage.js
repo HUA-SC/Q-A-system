@@ -21,6 +21,7 @@ function back(code, msg, result) {
     message.msg = msg || message.msg;
     message.result = result || message.result;
 
+    console.log(JSON.stringify({time:new Date(),message:message}))
     return message;
 }
 module.exports = {back,message};
