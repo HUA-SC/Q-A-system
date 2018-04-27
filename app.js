@@ -14,15 +14,12 @@ const logSystem = require('./module/logSystem.js');
 
 app.set('trust proxy', 1);
 
-let expiryDate = new Date( Date.now() + 60 * 60 * 1000 * 24 * 7 ); // 1周
-
 app.use(session({
     secret: 'keyboard cat',
     cookie: { path: '/',
         httpOnly: true,
         secure: false,
-        maxAge:  60000,
-        expiryDate:expiryDate,                          //cookie过期时间
+        maxAge:  60 * 60 * 1000 * 24 * 7,       // 过期时间1周
     },
     resave: true,                               //重新保存：强制会话保存，即使是未修改的。默认为true但是得写上
     saveUninitialized: true,                    //强制“未初始化”的会话保存到存储。
