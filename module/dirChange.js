@@ -59,9 +59,10 @@ function questionFormHandle(req,res,callback) {
         let content = fields.content.toString().trim();      //应由前端来做判断
 
         let courseId = fields.courseId.toString().trim();
+        let title = fields.courseId.toString().trim();
 
         censord = censor.filter(content);         //将敏感词变为**存入数据库
-
+        title = censor.filter(title);
 
         if(files.hasOwnProperty("img")){   //若存在字段名为“img”,则表示有图片被上传
             reNameImage(files,"img",upPath);
@@ -97,7 +98,7 @@ function questionFormHandle(req,res,callback) {
                         callback(myError.coursesNotFound,null);
                         return;
                     }else{
-                        db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString(),"create_time":createTime,"courseId":courseId}],(err,data) => {
+                        db.insertDocument(dataBase,questionDatabase,[{"user_id":userId,"content":censord,"img":images.toString(),"create_time":createTime,"courseId":courseId,"title":title}],(err,data) => {
                             if(err){
                                 images = [];   //清空
                                 callback(myError.databaseError,null);
