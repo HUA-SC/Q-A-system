@@ -30,7 +30,7 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1517">
+            <state relative-caret-position="1661">
               <caret line="579" column="2" lean-forward="true" selection-start-line="579" selection-start-column="2" selection-end-line="579" selection-end-column="2" />
               <folding>
                 <element signature="n#!!block;n#ping#0" expanded="false" />
@@ -519,7 +519,7 @@
       <workItem from="1524706276740" duration="9724000" />
       <workItem from="1524725468769" duration="783000" />
       <workItem from="1524726263714" duration="10144000" />
-      <workItem from="1524792147187" duration="223000" />
+      <workItem from="1524792147187" duration="874000" />
     </task>
     <task id="LOCAL-00001" summary="完成了登录界面的接口">
       <created>1513301410265</created>
@@ -857,11 +857,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524736358478</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="不要了">
+      <created>1524792380471</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1524792380471</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208340000" />
+    <option name="totallyTimeSpent" value="208991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -913,7 +920,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="错别字纠正" />
     <MESSAGE value="增加容错判断；提问到数据库添加功能完成" />
     <MESSAGE value="添加回答问题" />
     <MESSAGE value="完成提问与回答环节的删除功能" />
@@ -938,7 +944,8 @@
     <MESSAGE value="。。。" />
     <MESSAGE value="将用户信息中的头像字段名avatar修改为img。&#10;修改session获取判断条件，便于获取验证码，&#10;更新API文档" />
     <MESSAGE value="完善日志系统，并进行登录检测" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善日志系统，并进行登录检测" />
+    <MESSAGE value="不要了" />
+    <option name="LAST_COMMIT_MESSAGE" value="不要了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1226,7 +1233,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1517">
+        <state relative-caret-position="1661">
           <caret line="579" column="2" lean-forward="true" selection-start-line="579" selection-start-column="2" selection-end-line="579" selection-end-column="2" />
           <folding>
             <element signature="n#!!block;n#ping#0" expanded="false" />
