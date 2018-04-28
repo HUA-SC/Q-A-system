@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32bb93f4-8f86-44d8-80e5-ff9ae1e32979" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/doc/进度记录/直至2018-4-27的进度记录.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/doc/问答系统接入文档/提问接口.md" afterPath="$PROJECT_DIR$/doc/问答系统接入文档/提问接口.md" />
-      <change beforePath="$PROJECT_DIR$/module/backMessage.js" afterPath="$PROJECT_DIR$/module/backMessage.js" />
-      <change beforePath="$PROJECT_DIR$/module/dirChange.js" afterPath="$PROJECT_DIR$/module/dirChange.js" />
-      <change beforePath="$PROJECT_DIR$/module/paramCheck.js" afterPath="$PROJECT_DIR$/module/paramCheck.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +21,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+            <state relative-caret-position="395">
+              <caret line="40" column="72" lean-forward="false" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -155,11 +150,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="311" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="133" />
+    <option name="y" value="93" />
     <option name="width" value="1846" />
-    <option name="height" value="1061" />
+    <option name="height" value="1095" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -196,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,6 +223,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -443,14 +438,10 @@
       <workItem from="1524744057685" duration="2681000" />
       <workItem from="1524793156252" duration="1571000" />
       <workItem from="1524824622450" duration="3544000" />
-      <workItem from="1524875376588" duration="43000" />
-    </task>
-    <task id="LOCAL-00001" summary="完成了登录界面的接口">
-      <created>1513301410265</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1513301410265</updated>
+      <workItem from="1524875376588" duration="892000" />
+      <workItem from="1524893296308" duration="16000" />
+      <workItem from="1524894474419" duration="252000" />
+      <workItem from="1524895147007" duration="228000" />
     </task>
     <task id="LOCAL-00002" summary="完成查找数据库功能">
       <created>1513302329830</created>
@@ -788,17 +779,23 @@
       <option name="project" value="LOCAL" />
       <updated>1524828888766</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="跨域请求头设置允许携带cookie">
+      <created>1524875514589</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1524875514589</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215877000" />
+    <option name="totallyTimeSpent" value="217222000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="133" y="93" width="1846" height="1095" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2410148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25305218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59861594" sideWeight="0.6180867" order="7" side_tool="true" content_ui="tabs" />
@@ -806,7 +803,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.099887766" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.3819133" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18742986" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38494623" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5629575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -855,7 +852,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加容错判断；提问到数据库添加功能完成" />
     <MESSAGE value="添加回答问题" />
     <MESSAGE value="完成提问与回答环节的删除功能" />
     <MESSAGE value="完成提问与回答环节增删查功能！" />
@@ -880,7 +876,8 @@
     <MESSAGE value="将用户信息中的头像字段名avatar修改为img。&#10;修改session获取判断条件，便于获取验证码，&#10;更新API文档" />
     <MESSAGE value="更新API文档" />
     <MESSAGE value="更改提问数据库，增加title字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改提问数据库，增加title字段" />
+    <MESSAGE value="跨域请求头设置允许携带cookie" />
+    <option name="LAST_COMMIT_MESSAGE" value="跨域请求头设置允许携带cookie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1067,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16742">
           <caret line="766" column="9" lean-forward="false" selection-start-line="766" selection-start-column="9" selection-end-line="766" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,7 +1079,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="44">
             <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1095,7 +1089,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="44">
             <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1106,7 +1099,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="308">
             <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1124,7 +1116,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="22">
             <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1134,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="89" column="12" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,10 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="571" column="4" lean-forward="false" selection-start-line="571" selection-start-column="4" selection-end-line="571" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!block;n#ping#0" expanded="false" />
-            <element signature="n#!!block;n#register#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1153,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
           <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,14 +1153,12 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1185,14 +1168,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="23" column="63" lean-forward="false" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+        <state relative-caret-position="395">
+          <caret line="40" column="72" lean-forward="false" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
           <folding />
         </state>
       </provider>

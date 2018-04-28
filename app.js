@@ -38,7 +38,7 @@ app.all('*',(req,res,next) => {
 });             //重置错误码信息
 
 app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");//允许的域，设置为任意
+    res.header("Access-Control-Allow-Origin", req.headers.origin);      //允许的域，设置为任意
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With"); //设置允许的header类型
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");  //设置允许跨域的方法
     res.header("Access-Control-Allow-Credentials",true);
