@@ -68,7 +68,7 @@ app.post('/logIn',router.signIn);
 app.get('/logout',router.logOut);
 
 //请求session内容
-app.get('/query/session',router.querySession);
+app.post('/query/session',router.querySession);
 
 //添加提问信息的接口
 app.post('/add/question',router.addQuestion);
