@@ -59,7 +59,7 @@ function questionFormHandle(req,res,callback) {
         let content = fields.content.toString().trim();      //应由前端来做判断
 
         let courseId = fields.courseId.toString().trim();
-        let title = fields.courseId.toString().trim();
+        let title = fields.title.toString().trim();
 
         censord = censor.filter(content);         //将敏感词变为**存入数据库
         title = censor.filter(title);
