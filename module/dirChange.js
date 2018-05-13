@@ -225,7 +225,7 @@ function uMessageFormHandle(req,res,callback) {
         }
 
         let userId = fields.user_id.toString().trim();
-        let avatar = "";
+        let img = "";
         let censord = "";
         let age = "";
 
@@ -240,11 +240,11 @@ function uMessageFormHandle(req,res,callback) {
                 callback(myError.userNotRegisterError,null);
                 return;
             }else{
-                if(files.hasOwnProperty("avatar")){   //若存在字段名为“avatar”,则表示有图片被上传
-                    reNameImage(files,"avatar",upPath);
-                    avatar = images[0];
+                if(files.hasOwnProperty("img")){   //若存在字段名为“img”,则表示有图片被上传
+                    reNameImage(files,"img",upPath);
+                    img = images[0];
                 }else{                                  //值不变
-                    avatar = data[0].avatar;
+                    img = data[0].img;
                 }
                 if(fields.hasOwnProperty("age")){
                     age = fields.age;
@@ -267,7 +267,7 @@ function uMessageFormHandle(req,res,callback) {
                         callback(myError.userNotRegisterError,null);
                         return;
                     }else{
-                        db.updateDocument(dataBase,logDatabase,{"_id":ObjectId(userId)},{"age":age,"motto":censord,"avatar":avatar},(err,data) => {
+                        db.updateDocument(dataBase,logDatabase,{"_id":ObjectId(userId)},{"age":age,"motto":censord,"img":img},(err,data) => {
                             if(err){
                                 images = [];   //清空
                                 callback(myError.databaseError,null);
