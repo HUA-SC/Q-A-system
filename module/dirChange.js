@@ -129,7 +129,7 @@ function questionFormHandle(req,res,callback) {
 function answerFormHandle(req,res,callback) {
     let form = new formidable.IncomingForm();
 
-    let upPath = path.normalize('C:\\Users\\sc\\Desktop\\毕业设计\\Q-A-images');  //路径矫正
+    let upPath = path.normalize(imagePath);  //路径矫正
     form.uploadDir = upPath;   //设置缓存路径
     form.multiples = true;    //设置多文件上传
     // form.keepExtensions = true;   //设置保留文件后缀,取消此项设置，因为要重命名
@@ -206,7 +206,7 @@ function answerFormHandle(req,res,callback) {
 function uMessageFormHandle(req,res,callback) {
     let form = new formidable.IncomingForm();
 
-    let upPath = path.normalize('C:\\Users\\sc\\Desktop\\毕业设计\\Q-A-images');  //路径矫正
+    let upPath = path.normalize(imagePath);  //路径矫正
     form.uploadDir = upPath;   //设置缓存路径
     form.multiples = true;    //设置多文件上传
     // form.keepExtensions = true;   //设置保留文件后缀,取消此项设置，因为要重命名
